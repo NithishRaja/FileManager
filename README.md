@@ -1,4 +1,4 @@
-# React Native Quickstart
+# FileManager
 
 ## getting started
 * run `npm install -g react-native-cli`
