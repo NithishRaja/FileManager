@@ -1,8 +1,9 @@
 
 export default function(state=null, action){
-  return  [
-    'name1',
-    'name2',
-    'name3'
-  ];
+  switch(action.type){
+    case "UPDATE_FILE_LIST":
+      return action.payload;
+    default:
+      return state;
+  }
 }

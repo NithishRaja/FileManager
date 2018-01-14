@@ -13,4 +13,5 @@
 * finished refactoring at 1543
 * start add code for header at 1543
 * finished header and styled components at 1605
+* start writing epic to get file names from device storage at 1607
 * 
