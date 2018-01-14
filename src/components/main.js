@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, DrawerLayoutAndroid, Dimensions, StyleSheet, FlatList } from 'react-native';
+import FileList from "./fileList";
 
 const {width, height} = Dimensions.get("window");
 
@@ -20,12 +21,9 @@ export default class App extends Component{
       drawerPosition={DrawerLayoutAndroid.positions.left}
       renderNavigationView={this._renderNavigationView}
       >
-      <View>
-        <FlatList
-          data={this.props.fileList}
-          keyExtractor={(file, index) => index}
-          renderItem={(file) => <View><Text>{file.item}</Text></View>}
-          />
+      <View style={styles.container}>
+        <View style={styles.header}><Text>FileManager</Text></View>
+        <FileList fileList={this.props.fileList} />
       </View>
     </DrawerLayoutAndroid>
   }
@@ -38,5 +36,14 @@ export default class App extends Component{
 }
 
 const styles = StyleSheet.create({
-
+  container: {
+    width: width,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  header: {
+    backgroundColor: 'rgb(255, 100, 0)',
+    width: width,
+    padding: 10
+  }
 });
