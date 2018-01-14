@@ -11,23 +11,52 @@ export default class FileList extends Component{
 
   }
 
+  // returns index of object in array to use as id
+  _keyExtractor(file, index){
+    return index;
+  }
+
+  // returns JSX to render for each object in array
+  _renderItem(file){
+    return(
+      <View style={styles.listItem}>
+        <Icon isFile={file.item.isFile} isDirectory={file.item.isDirectory} name={file.item.name} />
+        <Text>{file.item.name}</Text>
+      </View>
+    );
+  }
+
+  // returns JSX to be displayed for separating 2 items in list
+  _itemSeparatorComponent(){
+    return(
+      <View style={styles.separator}></View>
+    );
+  }
+
+  // returns JSX to be displayed in case of empty list
+  _listEmptyComponent(){
+    return(
+      <Text>no files to display</Text>
+    );
+  }
+
   componentWillMount(){
     this._componentLayoutJSX = <FlatList
       data={this.props.fileList}
-      keyExtractor={(file, index) => index}
-      renderItem={(file) => <View style={styles.listItem}><Icon /><Text>{file.item}</Text></View>}
-      ItemSeparatorComponent={() => <View style={styles.separator}></View>}
-      ListEmptyComponent={() => <Text>no files to display</Text>}
+      keyExtractor={this._keyExtractor}
+      renderItem={this._renderItem}
+      ItemSeparatorComponent={this._itemSeparatorComponent}
+      ListEmptyComponent={this._listEmptyComponent}
       />;
   }
 
   componentWillUpdate(nextProps){
     this._componentLayoutJSX = <FlatList
       data={nextProps.fileList}
-      keyExtractor={(file, index) => index}
-      renderItem={(file) => <View style={styles.listItem}><Icon isFile={file.item.isFile} isDirectory={file.item.isDirectory} name={file.item.name} /><Text>{file.item.name}</Text></View>}
-      ItemSeparatorComponent={() => <View style={styles.separator}></View>}
-      ListEmptyComponent={() => <Text>no files to display</Text>}
+      keyExtractor={this._keyExtractor}
+      renderItem={this._renderItem}
+      ItemSeparatorComponent={this._itemSeparatorComponent}
+      ListEmptyComponent={this._listEmptyComponent}
       />;
   }
 

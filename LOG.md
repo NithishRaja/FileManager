@@ -21,4 +21,5 @@
 * **started at 2111 on 14-01-2018**
 * updated **FileList** component to display files from device storage
 * finished writing **Icon** component to display apppropriate icon at 2135
+* refactored **FileList** component with functions and provided comments for each function at 2146
 * 
