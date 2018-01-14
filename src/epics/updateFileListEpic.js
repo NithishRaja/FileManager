@@ -6,17 +6,20 @@ export default function(action$){
     .mergeMap(action => {
       return RNFS.readDir(RNFS.ExternalStorageDirectoryPath)
         .then((result) => {
-          console.log(result);
-          return Rx.Observable.Of(result);
+          return Rx.Observable.of(result);
         });
     })
     .pluck("value")
     .map(response => {
+      response = response.map(object => {
+        return {
+          name: object.name,
+          path: object.path,
+          isFile: object.isFile(),
+          isDirectory: object.isDirectory()
+        }
+      });
       console.log(response);
-      return {type:"UPDATE_FILE_LIST", payload:[
-        'name1',
-        'name2',
-        'name3'
-      ]};
+      return {type:"UPDATE_FILE_LIST", payload:response};
     });
 }

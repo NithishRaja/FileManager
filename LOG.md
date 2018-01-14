@@ -17,3 +17,8 @@
 * finished epic and updated fileList reducer
 * finished writing action to update fileList at 1632
 * **ended at 14-01-2018**
+
+* **started at 2111 on 14-01-2018**
+* updated **FileList** component to display files from device storage
+* finished writing **Icon** component to display apppropriate icon at 2135
+* 
