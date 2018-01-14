@@ -16,6 +16,9 @@ export default class App extends Component{
   }
 
   componentWillMount(){
+    if(this.props.fileList===null){
+      this.props.startFileListUpdate();
+    }
     this._componentLayoutJSX = <DrawerLayoutAndroid
       drawerWidth={width-50}
       drawerPosition={DrawerLayoutAndroid.positions.left}
@@ -24,6 +27,19 @@ export default class App extends Component{
       <View style={styles.container}>
         <View style={styles.header}><Text>FileManager</Text></View>
         <FileList fileList={this.props.fileList} />
+      </View>
+    </DrawerLayoutAndroid>
+  }
+
+  componentWillUpdate(nextProps){
+    this._componentLayoutJSX = <DrawerLayoutAndroid
+      drawerWidth={width-50}
+      drawerPosition={DrawerLayoutAndroid.positions.left}
+      renderNavigationView={this._renderNavigationView}
+      >
+      <View style={styles.container}>
+        <View style={styles.header}><Text>FileManager</Text></View>
+        <FileList fileList={nextProps.fileList} />
       </View>
     </DrawerLayoutAndroid>
   }

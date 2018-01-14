@@ -14,4 +14,6 @@
 * start add code for header at 1543
 * finished header and styled components at 1605
 * start writing epic to get file names from device storage at 1607
-* 
+* finished epic and updated fileList reducer
+* finished writing action to update fileList at 1632
+* **ended at 14-01-2018**

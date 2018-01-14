@@ -20,6 +20,16 @@ export default class FileList extends Component{
       />;
   }
 
+  componentWillUpdate(nextProps){
+    this._componentLayoutJSX = <FlatList
+      data={nextProps.fileList}
+      keyExtractor={(file, index) => index}
+      renderItem={(file) => <View style={styles.listItem}><Text>{file.item}</Text></View>}
+      ItemSeparatorComponent={() => <View style={styles.separator}></View>}
+      ListEmptyComponent={() => <Text>no files to display</Text>}
+      />;
+  }
+
   render(){
     return(
       this._componentLayoutJSX
