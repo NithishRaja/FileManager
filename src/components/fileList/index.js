@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { FlatList, View, Text, StyleSheet, Dimensions } from "react-native";
+import { FlatList, View, Text, StyleSheet, Dimensions, TouchableNativeFeedback, Alert } from "react-native";
 import Icon from "./icon";
 
 const {width} = Dimensions.get("window");
@@ -19,10 +19,15 @@ export default class FileList extends Component{
   // returns JSX to render for each object in array
   _renderItem(file){
     return(
-      <View style={styles.listItem}>
-        <Icon isFile={file.item.isFile} isDirectory={file.item.isDirectory} name={file.item.name} />
-        <Text>{file.item.name}</Text>
-      </View>
+      <TouchableNativeFeedback
+        onPress={(event) => Alert.alert(file.item.name)}
+        background={TouchableNativeFeedback.SelectableBackground()}
+        >
+        <View style={styles.listItem}>
+          <Icon isFile={file.item.isFile} isDirectory={file.item.isDirectory} name={file.item.name} />
+          <Text style={styles.listItemText}>{file.item.name}</Text>
+        </View>
+      </TouchableNativeFeedback>
     );
   }
 
@@ -72,7 +77,16 @@ const styles = StyleSheet.create({
   listItem: {
     width: width,
     backgroundColor: 'rgb(245, 245, 255)',
-    padding: 5
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    paddingLeft: 15,
+    paddingTop: 5,
+    paddingBottom: 5
+  },
+  listItemText: {
+    fontSize: 14,
+    paddingLeft: 15
   },
   separator: {
     borderColor: 'rgba(100, 100, 100, 0.3)',
