@@ -1,51 +1,42 @@
 import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { Text, View, DrawerLayoutAndroid, Dimensions, StyleSheet, FlatList } from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+const {width, height} = Dimensions.get("window");
 
-export default class App extends Component<{}> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+export default class App extends Component{
+
+  constructor(props){
+    super(props);
+
+  }
+
+  _renderNavigationView(){
+    return(<Text>Hello</Text>);
+  }
+
+  componentWillMount(){
+    this._componentLayoutJSX = <DrawerLayoutAndroid
+      drawerWidth={width-50}
+      drawerPosition={DrawerLayoutAndroid.positions.left}
+      renderNavigationView={this._renderNavigationView}
+      >
+      <View>
+        <FlatList
+          data={this.props.fileList}
+          keyExtractor={(file, index) => index}
+          renderItem={(file) => <View><Text>{file.item}</Text></View>}
+          />
       </View>
+    </DrawerLayoutAndroid>
+  }
+
+  render(){
+    return (
+      this._componentLayoutJSX
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+
 });

@@ -1,8 +1,8 @@
 import {combineReducers} from "redux";
-import dummyReducer from "./dummyReducer";
+import fileList from "./fileListReducer";
 
 const allReducers = combineReducers({
-  dummyReducer
+  fileList
 });
 
 export default allReducers;
