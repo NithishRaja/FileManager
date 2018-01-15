@@ -30,3 +30,8 @@
 * start writing reducer to hold current path at 1022
 * finished code to go into directories and display files at 1054
 * **ended at 1055 on 15-01-2018**
+
+* **started at 1320 on 15-01-2018**
+* refactored **FileList** component to update currentPath at 1329
+* added button to traverse back at 1338
+* 

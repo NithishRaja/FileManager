@@ -17,26 +17,26 @@ export default class FileList extends Component{
   }
 
   // returns JSX to render for each object in array
-  _renderItem(file){
-    return(
-      <TouchableNativeFeedback
-        onPress={(event) => {
-          if(file.item.isFile){
-            Alert.alert(file.item.name);
-          }else if(file.item.isDirectory){
-            console.log(file.item.name);
-            // this.props.updateCurrentPath(file.item.name);
-          }
-        }}
-        background={TouchableNativeFeedback.SelectableBackground()}
-        >
-        <View style={styles.listItem}>
-          <Icon isFile={file.item.isFile} isDirectory={file.item.isDirectory} name={file.item.name} />
-          <Text style={styles.listItemText}>{file.item.name}</Text>
-        </View>
-      </TouchableNativeFeedback>
-    );
-  }
+  // _renderItem(file){
+  //   return(
+  //     <TouchableNativeFeedback
+  //       onPress={(event) => {
+  //         if(file.item.isFile){
+  //           Alert.alert(file.item.name);
+  //         }else if(file.item.isDirectory){
+  //           console.log(file.item.name);
+  //           // this.props.updateCurrentPath(file.item.name);
+  //         }
+  //       }}
+  //       background={TouchableNativeFeedback.SelectableBackground()}
+  //       >
+  //       <View style={styles.listItem}>
+  //         <Icon isFile={file.item.isFile} isDirectory={file.item.isDirectory} name={file.item.name} />
+  //         <Text style={styles.listItemText}>{file.item.name}</Text>
+  //       </View>
+  //     </TouchableNativeFeedback>
+  //   );
+  // }
 
   // returns JSX to be displayed for separating 2 items in list
   _itemSeparatorComponent(){
@@ -63,7 +63,8 @@ export default class FileList extends Component{
               if(file.item.isFile){
                 Alert.alert(file.item.name);
               }else if(file.item.isDirectory){
-                props.updateCurrentPath(file.item.name);
+                props.currentPath.push(file.item.name);
+                props.startFileListUpdate(props.currentPath);
               }
             }}
             background={TouchableNativeFeedback.SelectableBackground()}
