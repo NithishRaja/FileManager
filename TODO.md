@@ -1,7 +1,5 @@
 # TODO
 
-* add back button
-* make appropriate image appear next to file and folder
 * add legend
 * update styles
 * add touch listeners to legend for navigation

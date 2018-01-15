@@ -37,4 +37,5 @@
 * start refactoring **Main** component at 1340
 * moved header code from **Main** component into **Header** component at 1349
 * finished adding functionality to back button at 1353
-* 
+* finished adding code to display image based upon file type at 1415
+* **ended at 1416 on 15-01-2018**
