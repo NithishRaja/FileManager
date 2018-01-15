@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, DrawerLayoutAndroid, Dimensions, StyleSheet, FlatList, TouchableNativeFeedback, Image, Alert } from 'react-native';
 import FileList from "./fileList";
+import Header from "./header";
 
 const {width, height} = Dimensions.get("window");
 
@@ -22,17 +23,7 @@ export default class App extends Component{
       renderNavigationView={this._renderNavigationView}
       >
       <View style={styles.container}>
-        <View style={styles.header}>
-          <TouchableNativeFeedback
-            onPress={() => Alert.alert("back")}
-            background={TouchableNativeFeedback.SelectableBackground()}
-            >
-            <View style={styles.headerIconContainer}>
-              <Image source={require("./../../static/images/icons/back.png")} style={styles.headerIcon} />
-            </View>
-          </TouchableNativeFeedback>
-          <Text>FileManager</Text>
-        </View>
+        <Header startFileListUpdate={props.startFileListUpdate} currentPath={props.currentPath} />
         <FileList startFileListUpdate={props.startFileListUpdate} currentPath={props.currentPath} fileList={props.fileList} />
       </View>
     </DrawerLayoutAndroid>;
@@ -61,19 +52,5 @@ const styles = StyleSheet.create({
     width: width,
     justifyContent: 'flex-start',
     alignItems: 'center',
-  },
-  header: {
-    backgroundColor: 'rgb(255, 100, 0)',
-    width: width,
-    flexDirection: 'row',
-    padding: 20,
-    alignItems: 'center'
-  },
-  headerIconContainer: {
-    paddingRight: 10
-  },
-  headerIcon: {
-    width: 20,
-    height: 20
   }
 });

@@ -34,4 +34,7 @@
 * **started at 1320 on 15-01-2018**
 * refactored **FileList** component to update currentPath at 1329
 * added button to traverse back at 1338
+* start refactoring **Main** component at 1340
+* moved header code from **Main** component into **Header** component at 1349
+* finished adding functionality to back button at 1353
 * 
