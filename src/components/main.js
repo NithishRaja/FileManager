@@ -15,10 +15,7 @@ export default class App extends Component{
     return(<Text>Hello</Text>);
   }
 
-  componentWillMount(){
-    if(this.props.fileList===null){
-      this.props.startFileListUpdate();
-    }
+  _updateComponentLayout(props){
     this._componentLayoutJSX = <DrawerLayoutAndroid
       drawerWidth={width-50}
       drawerPosition={DrawerLayoutAndroid.positions.left}
@@ -26,22 +23,23 @@ export default class App extends Component{
       >
       <View style={styles.container}>
         <View style={styles.header}><Text>FileManager</Text></View>
-        <FileList fileList={this.props.fileList} />
+        <FileList updateCurrentPath={(fileName) => {
+          props.currentPath.push(fileName);
+          props.startFileListUpdate(props.currentPath);
+        }} fileList={props.fileList} />
       </View>
-    </DrawerLayoutAndroid>
+    </DrawerLayoutAndroid>;
+  }
+
+  componentWillMount(){
+    if(this.props.fileList===null){
+      this.props.startFileListUpdate(this.props.currentPath);
+    }
+    this._updateComponentLayout(this.props);
   }
 
   componentWillUpdate(nextProps){
-    this._componentLayoutJSX = <DrawerLayoutAndroid
-      drawerWidth={width-50}
-      drawerPosition={DrawerLayoutAndroid.positions.left}
-      renderNavigationView={this._renderNavigationView}
-      >
-      <View style={styles.container}>
-        <View style={styles.header}><Text>FileManager</Text></View>
-        <FileList fileList={nextProps.fileList} />
-      </View>
-    </DrawerLayoutAndroid>
+    this._updateComponentLayout(nextProps);
   }
 
   render(){

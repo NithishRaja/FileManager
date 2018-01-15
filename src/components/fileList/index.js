@@ -20,7 +20,14 @@ export default class FileList extends Component{
   _renderItem(file){
     return(
       <TouchableNativeFeedback
-        onPress={(event) => Alert.alert(file.item.name)}
+        onPress={(event) => {
+          if(file.item.isFile){
+            Alert.alert(file.item.name);
+          }else if(file.item.isDirectory){
+            console.log(file.item.name);
+            // this.props.updateCurrentPath(file.item.name);
+          }
+        }}
         background={TouchableNativeFeedback.SelectableBackground()}
         >
         <View style={styles.listItem}>
@@ -45,24 +52,40 @@ export default class FileList extends Component{
     );
   }
 
-  componentWillMount(){
+  _updateComponentLayout(props){
     this._componentLayoutJSX = <FlatList
-      data={this.props.fileList}
+      data={props.fileList}
       keyExtractor={this._keyExtractor}
-      renderItem={this._renderItem}
+      renderItem={(file) => {
+        return(
+          <TouchableNativeFeedback
+            onPress={(event) => {
+              if(file.item.isFile){
+                Alert.alert(file.item.name);
+              }else if(file.item.isDirectory){
+                props.updateCurrentPath(file.item.name);
+              }
+            }}
+            background={TouchableNativeFeedback.SelectableBackground()}
+            >
+            <View style={styles.listItem}>
+              <Icon isFile={file.item.isFile} isDirectory={file.item.isDirectory} name={file.item.name} />
+              <Text style={styles.listItemText}>{file.item.name}</Text>
+            </View>
+          </TouchableNativeFeedback>
+        );
+      }}
       ItemSeparatorComponent={this._itemSeparatorComponent}
       ListEmptyComponent={this._listEmptyComponent}
       />;
   }
 
+  componentWillMount(){
+    this._updateComponentLayout(this.props);
+  }
+
   componentWillUpdate(nextProps){
-    this._componentLayoutJSX = <FlatList
-      data={nextProps.fileList}
-      keyExtractor={this._keyExtractor}
-      renderItem={this._renderItem}
-      ItemSeparatorComponent={this._itemSeparatorComponent}
-      ListEmptyComponent={this._listEmptyComponent}
-      />;
+    this._updateComponentLayout(nextProps);
   }
 
   render(){

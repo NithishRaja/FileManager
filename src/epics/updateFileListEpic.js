@@ -4,7 +4,10 @@ import Rx from "rxjs/Rx";
 export default function(action$){
   return action$.ofType("START_FILE_LIST_UPDATE")
     .mergeMap(action => {
-      return RNFS.readDir(RNFS.ExternalStorageDirectoryPath)
+      console.log(action);
+      const path = action.payload.join("/");
+      console.log(path);
+      return RNFS.readDir(path)
         .then((result) => {
           return Rx.Observable.of(result);
         });
