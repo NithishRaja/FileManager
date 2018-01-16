@@ -39,3 +39,11 @@
 * finished adding functionality to back button at 1353
 * finished adding code to display image based upon file type at 1415
 * **ended at 1416 on 15-01-2018**
+
+* **started at 1422 on 16-01-2018**
+* start adding code for legend at 1426
+* finished boilerplate for **Legend** component at 1453
+* error: `attempt to get length of null array`
+* error thrown at 1503
+* error is thrown only when trying to enter `UDiskA` or `Private` directory
+* **started at 1509 on 16-01-2018**

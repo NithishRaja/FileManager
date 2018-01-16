@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import { FlatList, View, Text, StyleSheet, Dimensions, TouchableNativeFeedback, Alert } from "react-native";
 import Icon from "./icon";
+import Legend from "./legend";
 
 const {width} = Dimensions.get("window");
 
@@ -78,6 +79,7 @@ export default class FileList extends Component{
       }}
       ItemSeparatorComponent={this._itemSeparatorComponent}
       ListEmptyComponent={this._listEmptyComponent}
+      ListHeaderComponent={() => <Legend currentPath={props.currentPath} />}
       />;
   }
 
