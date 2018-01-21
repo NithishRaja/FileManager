@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { Text, View, FlatList, Alert, StyleSheet, TouchableNativeFeedback } from "react-native";
+import { Text, View, FlatList, Alert, StyleSheet, TouchableNativeFeedback, Image } from "react-native";
 
 export default class Legend extends Component{
 
@@ -8,15 +8,34 @@ export default class Legend extends Component{
 
   }
 
+  _itemSeparatorComponent(){
+    return(
+      <View style={styles.listItemSeparator}>
+        <Image source={require("./../../../static/images/icons/next.png")} style={styles.listItemSeparatorImage} />
+      </View>
+    );
+  }
+
   _updateComponentLayout(props, state){
     this._componentLayoutJSX = <FlatList
       style={styles.container}
       data={props.currentPath}
       keyExtractor={(dir, index) => index}
       renderItem={(dir) => {
-        return(<View style={styles.listItem}><Text>{dir.index===0?"root":dir.item}</Text></View>);
+        return(
+          <TouchableNativeFeedback
+            onPress={(event) => {
+              props.startFileListUpdate(props.currentPath.slice(0, dir.index+1));
+            }}
+            background={TouchableNativeFeedback.SelectableBackground()}
+            >
+            <View style={styles.listItem}>
+              <Text>{dir.index===0?"root":dir.item}</Text>
+            </View>
+          </TouchableNativeFeedback>
+        );
       }}
-      ItemSeparatorComponent={() => <View style={styles.listItemSeparator}></View>}
+      ItemSeparatorComponent={this._itemSeparatorComponent}
       horizontal={true}
       />;
   }
@@ -39,15 +58,17 @@ export default class Legend extends Component{
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'rgb(245, 245, 255)'
+    backgroundColor: 'rgb(245, 245, 255)',
   },
   listItem: {
     padding: 5
   },
   listItemSeparator: {
-    borderRightWidth:0.5,
-    borderRightColor:'#000',
-    borderTopRightRadius: 5,
-    borderTopLeftRadius: 5
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  listItemSeparatorImage: {
+    height:20,
+    width:20
   }
 });

@@ -47,3 +47,9 @@
 * error thrown at 1503
 * error is thrown only when trying to enter `UDiskA` or `Private` directory
 * **started at 1509 on 16-01-2018**
+
+* **started at 1603 on 21-01-2018**
+* added image to **legend** component at 1613
+* added touch listeners to **legend** component at 1619
+* finished adding functionality to **legend** component at 1628
+* 

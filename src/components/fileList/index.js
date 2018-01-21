@@ -79,7 +79,7 @@ export default class FileList extends Component{
       }}
       ItemSeparatorComponent={this._itemSeparatorComponent}
       ListEmptyComponent={this._listEmptyComponent}
-      ListHeaderComponent={() => <Legend currentPath={props.currentPath} />}
+      ListHeaderComponent={() => <Legend startFileListUpdate={props.startFileListUpdate} currentPath={props.currentPath} />}
       />;
   }
 
