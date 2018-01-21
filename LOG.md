@@ -52,4 +52,5 @@
 * added image to **legend** component at 1613
 * added touch listeners to **legend** component at 1619
 * finished adding functionality to **legend** component at 1628
+* start writing boilerplate for quick access menu
 * 

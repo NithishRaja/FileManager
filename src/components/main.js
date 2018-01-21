@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, DrawerLayoutAndroid, Dimensions, StyleSheet, FlatList, TouchableNativeFeedback, Image, Alert } from 'react-native';
 import FileList from "./fileList";
 import Header from "./header";
+import Nav from "./nav";
 
 const {width, height} = Dimensions.get("window");
 
@@ -13,7 +14,9 @@ export default class App extends Component{
   }
 
   _renderNavigationView(){
-    return(<Text>Hello</Text>);
+    return(
+      <Nav />
+    );
   }
 
   _updateComponentLayout(props){
