@@ -11,7 +11,7 @@ export default class Legend extends Component{
   _itemSeparatorComponent(){
     return(
       <View style={styles.listItemSeparator}>
-        <Image source={require("./../../../static/images/icons/next.png")} style={styles.listItemSeparatorImage} />
+        <Image source={require("./../../../static/images/next.png")} style={styles.listItemSeparatorImage} />
       </View>
     );
   }
