@@ -57,4 +57,5 @@
 
 * **started at 1820 on 22-01-2018**
 * added default image to **Nav** component at 1833
+* updated epic to ignore `Private` and `UDiskA` folders at 1841
 * 

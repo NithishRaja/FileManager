@@ -14,7 +14,13 @@ export default function(action$){
     })
     .pluck("value")
     .map(response => {
-      response = response.map(object => {
+      response = response.filter(object => {
+        if(object.name==="UDiskA"||object.name==="Private"){
+          return false;
+        }else{
+          return true;
+        }
+      }).map(object => {
         return {
           name: object.name,
           path: object.path,
