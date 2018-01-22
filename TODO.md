@@ -1,6 +1,5 @@
 # TODO
 
-* add boilerplate for quick access menu
 * handle error thrown for `UDiskA` and `Private` directories
 * update styles
 * make quick access menu functional

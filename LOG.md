@@ -53,4 +53,8 @@
 * added touch listeners to **legend** component at 1619
 * finished adding functionality to **legend** component at 1628
 * start writing boilerplate for quick access menu
+* **ended at 1702 on 21-01-2018**
+
+* **started at 1820 on 22-01-2018**
+* added default image to **Nav** component at 1833
 * 
