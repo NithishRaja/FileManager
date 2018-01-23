@@ -58,4 +58,9 @@
 * **started at 1820 on 22-01-2018**
 * added default image to **Nav** component at 1833
 * updated epic to ignore `Private` and `UDiskA` folders at 1841
+* **ended at 1845 on 22-01-2018**
+
+* **started at 1742 on 23-01-2018**
+* refactored epic to set file type
+* removed file type checking functionality from **Icon** component at 1755
 * 

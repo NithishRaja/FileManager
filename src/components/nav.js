@@ -9,7 +9,7 @@ export default class Nav extends Component{
     super(props);
 
     this.state = {
-      data: ["audio", "video", "images"]
+      data: ["audio", "video", "images", "directories"]
     }
 
   }

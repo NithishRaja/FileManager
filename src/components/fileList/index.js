@@ -71,7 +71,7 @@ export default class FileList extends Component{
             background={TouchableNativeFeedback.SelectableBackground()}
             >
             <View style={styles.listItem}>
-              <Icon isFile={file.item.isFile} isDirectory={file.item.isDirectory} name={file.item.name} />
+              <Icon isFile={file.item.isFile} isDirectory={file.item.isDirectory} name={file.item.name} type={file.item.type} />
               <Text style={styles.listItemText}>{file.item.name}</Text>
             </View>
           </TouchableNativeFeedback>

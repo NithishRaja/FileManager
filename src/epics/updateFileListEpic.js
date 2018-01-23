@@ -21,11 +21,28 @@ export default function(action$){
           return true;
         }
       }).map(object => {
+        let fileType = {
+          image: RegExp("\.(jpeg|jpg|png|bmp|raw)$", "i"),
+          audio: RegExp("\.(wav|mp3|wma)$", "i"),
+          video: RegExp("\.(wmv|mov|mkv|mp4|flv)$", "i"),
+          text: RegExp("\.(txt)$", "i")
+        };
+        let type = null;
+        if(fileType.image.test(object.name)){
+          type="image";
+        }else if(fileType.audio.test(object.name)){
+          type="audio";
+        }else if(fileType.video.test(object.name)){
+          type="video";
+        }else if(fileType.image.test(object.name)){
+          type="text";
+        }
         return {
           name: object.name,
           path: object.path,
           isFile: object.isFile(),
-          isDirectory: object.isDirectory()
+          isDirectory: object.isDirectory(),
+          type: type
         }
       });
       console.log(response);

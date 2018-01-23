@@ -33,13 +33,13 @@ export default class Icon extends Component{
     if(props.isDirectory){
       this._componentLayoutJSX = this._plainFolderJSX;
     }else if(props.isFile){
-      if(state.image.test(props.name)){
+      if(props.type==="image"){
         this._componentLayoutJSX = this._imageFileJSX;
-      }else if(state.audio.test(props.name)){
+      }else if(props.type==="audio"){
         this._componentLayoutJSX = this._audioFileJSX;
-      }else if(state.video.test(props.name)){
+      }else if(props.type==="video"){
         this._componentLayoutJSX = this._videoFileJSX;
-      }else if(state.text.test(props.name)){
+      }else if(props.type==="text"){
         this._componentLayoutJSX = this._textFileJSX;
       }else{
         this._componentLayoutJSX = this._plainFileJSX;
