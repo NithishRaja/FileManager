@@ -8,6 +8,10 @@ const {width, height} = Dimensions.get("window");
 
 export default class App extends Component{
 
+  static navigationOptions = {
+    title: 'FileManager',
+  };
+
   constructor(props){
     super(props);
 
@@ -26,7 +30,6 @@ export default class App extends Component{
       renderNavigationView={this._renderNavigationView}
       >
       <View style={styles.container}>
-        <Header startFileListUpdate={props.startFileListUpdate} currentPath={props.currentPath} />
         <FileList startFileListUpdate={props.startFileListUpdate} currentPath={props.currentPath} fileList={props.fileList} />
       </View>
     </DrawerLayoutAndroid>;
@@ -44,6 +47,7 @@ export default class App extends Component{
   }
 
   render(){
+    const { navigate } = this.props.navigation;
     return (
       this._componentLayoutJSX
     );

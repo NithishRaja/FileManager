@@ -63,4 +63,7 @@
 * **started at 1742 on 23-01-2018**
 * refactored epic to set file type
 * removed file type checking functionality from **Icon** component at 1755
+* start adding navigation to app at 1805
+* removed **Header** component at 1815
+* used `react-navigation` to add navigation to page
 * 
