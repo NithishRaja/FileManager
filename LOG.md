@@ -66,4 +66,9 @@
 * start adding navigation to app at 1805
 * removed **Header** component at 1815
 * used `react-navigation` to add navigation to page
+* **ended at 1818 on 23-01-2018**
+
+* **started at 1711 on 24-01-2018**
+* start switching from `stact-navigator` to `drawer-navigator` at 1715
+* restored **header** component at 1720
 * 

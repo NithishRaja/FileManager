@@ -30,6 +30,7 @@ export default class App extends Component{
       renderNavigationView={this._renderNavigationView}
       >
       <View style={styles.container}>
+        <Header startFileListUpdate={props.startFileListUpdate} currentPath={props.currentPath} />
         <FileList startFileListUpdate={props.startFileListUpdate} currentPath={props.currentPath} fileList={props.fileList} />
       </View>
     </DrawerLayoutAndroid>;
