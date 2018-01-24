@@ -1,5 +1,6 @@
 import { DrawerNavigator } from 'react-navigation';
 import Main from "./../containers/mainContainer";
+import ImageViewer from "./../components/imageViewer";
 
 export default App = DrawerNavigator({
   Home: {
@@ -7,5 +8,11 @@ export default App = DrawerNavigator({
     navigationOptions: {
       drawerLabel: 'Directories'
     }
-   }
+  },
+  Image: {
+    screen: ImageViewer,
+    navigationOptions: {
+      drawerLabel: 'Images'
+    }
+  }
 });

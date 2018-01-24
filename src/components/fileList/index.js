@@ -62,7 +62,11 @@ export default class FileList extends Component{
           <TouchableNativeFeedback
             onPress={(event) => {
               if(file.item.isFile){
-                Alert.alert(file.item.name);
+                if(file.item.type==="image"){
+                  props.navigate("Image");
+                }else{
+                  Alert.alert(file.item.name);
+                }
               }else if(file.item.isDirectory){
                 props.currentPath.push(file.item.name);
                 props.startFileListUpdate(props.currentPath);

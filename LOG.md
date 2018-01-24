@@ -71,4 +71,7 @@
 * **started at 1711 on 24-01-2018**
 * start switching from `stact-navigator` to `drawer-navigator` at 1715
 * restored **header** component at 1720
-* 
+* wrote **ImageViewer** component at 1735
+* enabled navigation between **Main** and **ImageViewer**
+* set up images to be displayed when image file is clicked at 1743
+* **ended at 1744 on 24-01-2018**
