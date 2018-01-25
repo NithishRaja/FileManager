@@ -5,7 +5,7 @@
 * run `npm install`
 
 ## viewing app
-* connect device to system and enable developer options or start android/ios simulator
+* connect device to system and [enable developer options](https://www.androidcentral.com/how-enable-developer-settings-android-42) or start android/ios simulator
 * run `react-native run-android` or `react-native run-ios` to view app in device/simulator
 
 ## editing code
