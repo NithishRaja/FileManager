@@ -1,6 +1,6 @@
 import { DrawerNavigator } from 'react-navigation';
 import Main from "./../containers/mainContainer";
-import ImageViewer from "./../components/imageViewer";
+import ImageViewer from "./../containers/imageViewerContainer";
 
 export default App = DrawerNavigator({
   Home: {

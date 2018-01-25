@@ -27,7 +27,7 @@ export default class App extends Component{
       >
       <View style={styles.container}>
         <Header startFileListUpdate={props.startFileListUpdate} currentPath={props.currentPath} />
-        <FileList navigate={navigate} startFileListUpdate={props.startFileListUpdate} currentPath={props.currentPath} fileList={props.fileList} />
+        <FileList navigate={navigate} startFileListUpdate={props.startFileListUpdate} updateSelectedImage={props.updateSelectedImage} currentPath={props.currentPath} fileList={props.fileList} />
       </View>
     </DrawerLayoutAndroid>;
   }

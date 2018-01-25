@@ -63,6 +63,7 @@ export default class FileList extends Component{
             onPress={(event) => {
               if(file.item.isFile){
                 if(file.item.type==="image"){
+                  props.updateSelectedImage(file.item);
                   props.navigate("Image");
                 }else{
                   Alert.alert(file.item.name);

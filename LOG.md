@@ -75,3 +75,10 @@
 * enabled navigation between **Main** and **ImageViewer**
 * set up images to be displayed when image file is clicked at 1743
 * **ended at 1744 on 24-01-2018**
+
+* **started at 1750 on 15-01-2018**
+* wrote container for **ImageViewer** component
+* wrote reducer to hold selected image details
+* wrote action to update selectedImage reducer
+* updated **ImageViewer** component to display selected Image at 1831
+* bug: unable to display images inside directories with blank sspace in their name
