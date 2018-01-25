@@ -1,7 +1,8 @@
 # TODO
 
 * update styles
-* make quick access menu functional
-* add activity to display images
+* update ImageViewer to display images according to directories
 * add activity to play video
 * add component to play audio
+* provide comments
+* update README.md
