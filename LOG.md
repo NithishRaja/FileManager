@@ -82,3 +82,5 @@
 * wrote action to update selectedImage reducer
 * updated **ImageViewer** component to display selected Image at 1831
 * bug: unable to display images inside directories with blank sspace in their name
+* resolved error at 1837
+* 

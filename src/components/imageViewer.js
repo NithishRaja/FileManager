@@ -12,15 +12,8 @@ export default class ImageViewer extends Component{
   }
 
   _updateComponentLayout(props, state){
-    const path = props.selectedImage.path.split("/").map((dir) => {
-      if(RegExp(" ").test(dir)){
-        return `"${dir}"`;
-      }else{
-        return dir
-      }
-    }).join("/");
     if(props.selectedImage!==null){
-      this._componentLayoutJSX = <Image source={{uri:`file://${path}`}} style={styles.image} />;
+      this._componentLayoutJSX = <Image source={{uri:`file://${props.selectedImage.path}`}} style={styles.image} />;
     }else{
       this._componentLayoutJSX = this._defaultImageJSX;
     }
