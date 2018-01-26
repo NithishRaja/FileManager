@@ -88,3 +88,8 @@
 * **started at 2139 at 25-01-2018**
 * updated README.md at 2142
 * **ended at 2142 on 25-01-2018**
+
+* **started at 0909 on 26-01-2018**
+* start refactoring **updateFileListEpic** at 0910
+* finished refactoring **updateFileListEpic** to display files at the end and in sorted order at 0943
+* 
