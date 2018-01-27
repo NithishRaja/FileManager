@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import { FlatList, View, Text, StyleSheet, Dimensions, TouchableNativeFeedback, ToastAndroid , Linking } from "react-native";
-import Icon from "./icon";
+import Icons from "./icons";
 import Legend from "./legend";
 
 const {width} = Dimensions.get("window");
@@ -86,7 +86,7 @@ export default class FileList extends Component{
             background={TouchableNativeFeedback.SelectableBackground()}
             >
             <View style={styles.listItem}>
-              <Icon isFile={file.item.isFile} isDirectory={file.item.isDirectory} name={file.item.name} type={file.item.type} />
+              <Icons isFile={file.item.isFile} isDirectory={file.item.isDirectory} name={file.item.name} type={file.item.type} />
               <Text style={styles.listItemText}>{file.item.name}</Text>
             </View>
           </TouchableNativeFeedback>

@@ -1,7 +1,8 @@
 import React, {Component} from "react";
-import { Image, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
+import Icon from "react-native-vector-icons/Entypo";
 
-export default class Icon extends Component{
+export default class Icons extends Component{
 
   constructor(props){
     super(props);
@@ -13,19 +14,19 @@ export default class Icon extends Component{
       text: RegExp("\.(txt)$", "i")
     };
 
-    this._plainFolderJSX = <Image source={require("./../../../static/images/icons/folder.png")} style={styles.icon} />;
+    this._plainFolderJSX = <Icon name="folder" size={50} />;
 
-    this._plainFileJSX = <Image source={require("./../../../static/images/icons/file.png")} style={styles.icon} />;
+    this._plainFileJSX = <Icon name="news" size={50} />;
 
-    this._audioFileJSX = <Image source={require("./../../../static/images/icons/audio.png")} style={styles.icon} />;
+    this._audioFileJSX = <Icon name="music" size={50} />;
 
-    this._imageFileJSX = <Image source={require("./../../../static/images/icons/image.png")} style={styles.icon} />;
+    this._imageFileJSX = <Icon name="image-inverted" size={50} />;
 
-    this._textFileJSX = <Image source={require("./../../../static/images/icons/text.png")} style={styles.icon} />;
+    this._textFileJSX = <Icon name="text-document-inverted" size={50} />;
 
-    this._videoFileJSX = <Image source={require("./../../../static/images/icons/video.png")} style={styles.icon} />;
+    this._videoFileJSX = <Icon name="video" size={50} />;
 
-    this._unknownObjectJSX = <Image source={require("./../../../static/images/icons/unknown.png")} style={styles.icon} />;
+    this._unknownObjectJSX = <Icon name="traffic-cone" size={50} />;
 
   }
 

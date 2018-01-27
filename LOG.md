@@ -104,4 +104,6 @@
 * replace alerts with toasts inside **FileList** component at 1733
 * instead of making one app do multiple functions, decided to separate functions between multiple apps
 * switched back to StackNavigator for simplicity at 1740
+* rename **Icon** component to **Icons** component
+* finished updating **Icons** component to use `react-native-vector-icons` at 1808
 * 
