@@ -92,4 +92,14 @@
 * **started at 0909 on 26-01-2018**
 * start refactoring **updateFileListEpic** at 0910
 * finished refactoring **updateFileListEpic** to display files at the end and in sorted order at 0943
+* note: there is a visible delay for **updateFileListEpic** to complete running
+* separating code into multiple epics can improve performance
+* **ended at 0952 on 26-01-2018**
+
+* **started at 1522 on 26-01-2018**
+* used linking to open files at 1525
+* **ended at 1541 on 26-01-2018**
+
+* **started at 1730 on 27-01-2018**
+* replace alerts with toasts inside **FileList** component at 1733
 * 

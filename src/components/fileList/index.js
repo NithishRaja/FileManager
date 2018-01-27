@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { FlatList, View, Text, StyleSheet, Dimensions, TouchableNativeFeedback, Alert } from "react-native";
+import { FlatList, View, Text, StyleSheet, Dimensions, TouchableNativeFeedback, ToastAndroid , Linking } from "react-native";
 import Icon from "./icon";
 import Legend from "./legend";
 
@@ -66,7 +66,17 @@ export default class FileList extends Component{
                   props.updateSelectedImage(file.item);
                   props.navigate("Image");
                 }else{
-                  Alert.alert(file.item.name);
+                  const url = `file://${file.item.path}`;
+                  Linking.canOpenURL(url).then(supported => {
+                    if (!supported) {
+                      ToastAndroid.show("file type not supported", ToastAndroid.SHORT);
+                    } else {
+                      return Linking.openURL(url);
+                    }
+                  }).catch(err => {
+                    console.error('An error occurred', err);
+                    ToastAndroid.show("unable to open file", ToastAndroid.SHORT);
+                  });
                 }
               }else if(file.item.isDirectory){
                 props.currentPath.push(file.item.name);
