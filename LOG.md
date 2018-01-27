@@ -102,4 +102,6 @@
 
 * **started at 1730 on 27-01-2018**
 * replace alerts with toasts inside **FileList** component at 1733
+* instead of making one app do multiple functions, decided to separate functions between multiple apps
+* switched back to StackNavigator for simplicity at 1740
 * 

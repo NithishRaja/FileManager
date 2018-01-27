@@ -1,18 +1,18 @@
-import { DrawerNavigator } from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 import Main from "./../containers/mainContainer";
 import ImageViewer from "./../containers/imageViewerContainer";
 
-export default App = DrawerNavigator({
+export default App = StackNavigator({
   Home: {
     screen: Main,
     navigationOptions: {
-      drawerLabel: 'Directories'
+      headerTitle: 'FileManager'
     }
   },
   Image: {
     screen: ImageViewer,
     navigationOptions: {
-      drawerLabel: 'Images'
+      headerTitle: 'Image'
     }
   }
 });
