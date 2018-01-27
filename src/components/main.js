@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, DrawerLayoutAndroid, Dimensions, StyleSheet, FlatList, TouchableNativeFeedback, Image, Alert } from 'react-native';
 import FileList from "./fileList";
-import Nav from "./nav";
 
 const {width, height} = Dimensions.get("window");
 
@@ -11,23 +10,11 @@ export default class App extends Component{
 
   }
 
-  _renderNavigationView(){
-    return(
-      <Nav />
-    );
-  }
-
   _updateComponentLayout(props){
     const { navigate } = props.navigation;
-    this._componentLayoutJSX = <DrawerLayoutAndroid
-      drawerWidth={width-50}
-      drawerPosition={DrawerLayoutAndroid.positions.left}
-      renderNavigationView={this._renderNavigationView}
-      >
-      <View style={styles.container}>
-        <FileList navigate={navigate} startFileListUpdate={props.startFileListUpdate} updateSelectedImage={props.updateSelectedImage} currentPath={props.currentPath} fileList={props.fileList} />
-      </View>
-    </DrawerLayoutAndroid>;
+    this._componentLayoutJSX = <View style={styles.container}>
+      <FileList navigate={navigate} startFileListUpdate={props.startFileListUpdate} updateSelectedImage={props.updateSelectedImage} currentPath={props.currentPath} fileList={props.fileList} />
+    </View>;
   }
 
   componentWillMount(){

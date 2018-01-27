@@ -106,4 +106,5 @@
 * switched back to StackNavigator for simplicity at 1740
 * rename **Icon** component to **Icons** component
 * finished updating **Icons** component to use `react-native-vector-icons` at 1808
+* removed `DrawerLayoutAndroid` from **Main** component at 1811
 * 
