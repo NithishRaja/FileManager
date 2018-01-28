@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View, DrawerLayoutAndroid, Dimensions, StyleSheet, FlatList, TouchableNativeFeedback, Image, Alert } from 'react-native';
+import { Text, View, DrawerLayoutAndroid, StyleSheet, FlatList, TouchableNativeFeedback, Image, Alert } from 'react-native';
 import FileList from "./fileList";
-
-const {width, height} = Dimensions.get("window");
+import { crossResponsiveWidth } from "react-native-cross-platform-responsive-dimensions";
 
 export default class App extends Component{
   constructor(props){
@@ -37,7 +36,7 @@ export default class App extends Component{
 
 const styles = StyleSheet.create({
   container: {
-    width: width,
+    width: crossResponsiveWidth(100, 100, 100, 100),
     justifyContent: 'flex-start',
     alignItems: 'center',
   }

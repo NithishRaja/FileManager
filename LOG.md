@@ -113,4 +113,6 @@
 * **started at 1133 on 28-01-2018**
 * install and link `react-native-device-info` at 1134
 * updated AndroidManifest.xml to fix app in portrait mode
+* start updating styles at 1145
+* finished styling using `react-native-cross-platform-responsive-dimensions` api at 1208
 * 

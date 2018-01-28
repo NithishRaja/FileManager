@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import { View, Text, Image, Dimensions, StyleSheet } from "react-native";
-
-const {width, height} = Dimensions.get("window");
+import { crossResponsiveWidth, crossResponsiveHeight } from "react-native-cross-platform-responsive-dimensions";
 
 export default class ImageViewer extends Component{
   constructor(props){
@@ -37,7 +36,7 @@ export default class ImageViewer extends Component{
 
 const styles = StyleSheet.create({
   image: {
-    width: width,
-    height: height
+    width: crossResponsiveWidth(100, 100, 100 ,100),
+    height: crossResponsiveHeight(90, 90, 90, 90)
   }
 });

@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import { FlatList, View, Text, StyleSheet, Dimensions, TouchableNativeFeedback, ToastAndroid , Linking } from "react-native";
+import { crossResponsiveFontSize } from "react-native-cross-platform-responsive-dimensions";
+
 import Icons from "./icons";
 import Legend from "./legend";
 
@@ -49,7 +51,9 @@ export default class FileList extends Component{
   // returns JSX to be displayed in case of empty list
   _listEmptyComponent(){
     return(
-      <Text>no files to display</Text>
+      <View style={styles.noFile}>
+        <Text>no files to display</Text>
+      </View>
     );
   }
 
@@ -117,7 +121,7 @@ export default class FileList extends Component{
 const styles = StyleSheet.create({
   listItem: {
     width: width,
-    backgroundColor: 'rgb(245, 245, 255)',
+    backgroundColor: 'rgb(255, 255 ,255)',
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
@@ -126,11 +130,15 @@ const styles = StyleSheet.create({
     paddingBottom: 5
   },
   listItemText: {
-    fontSize: 14,
+    fontSize: crossResponsiveFontSize(2, 2, 2, 2),
     paddingLeft: 15
   },
   separator: {
     borderColor: 'rgba(100, 100, 100, 0.3)',
     borderWidth: 0.5,
+  },
+  noFile: {
+    alignItems: "center",
+    alignSelf: "center"
   }
 });

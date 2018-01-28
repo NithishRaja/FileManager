@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import { StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/Entypo";
+import { crossResponsiveWidth, crossResponsiveHeight } from "react-native-cross-platform-responsive-dimensions";
 
 export default class Icons extends Component{
 
@@ -68,7 +69,7 @@ export default class Icons extends Component{
 
 const styles = StyleSheet.create({
   icon:{
-    width: 50,
-    height: 50
+    width: crossResponsiveWidth(10, 10, 10, 10),
+    height: crossResponsiveHeight(10, 10, 10, 10)
   }
 });

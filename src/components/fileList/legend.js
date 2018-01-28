@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { Text, View, FlatList, Alert, StyleSheet, TouchableNativeFeedback, Image } from "react-native";
+import { crossResponsiveWidth, crossResponsiveHeight, crossResponsiveFontSize } from "react-native-cross-platform-responsive-dimensions";
 
 export default class Legend extends Component{
 
@@ -30,7 +31,7 @@ export default class Legend extends Component{
             background={TouchableNativeFeedback.SelectableBackground()}
             >
             <View style={styles.listItem}>
-              <Text>{dir.index===0?"root":dir.item}</Text>
+              <Text style={styles.listItemText}>{dir.index===0?"root":dir.item}</Text>
             </View>
           </TouchableNativeFeedback>
         );
@@ -58,17 +59,21 @@ export default class Legend extends Component{
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'rgb(245, 245, 255)',
+    width: crossResponsiveWidth(100, 100, 100, 100),
+    backgroundColor: 'rgb(255, 255, 255)',
   },
   listItem: {
     padding: 5
+  },
+  listItemText: {
+    fontSize: crossResponsiveFontSize(2, 2, 2, 2)
   },
   listItemSeparator: {
     flexDirection: 'row',
     alignItems: 'center'
   },
   listItemSeparatorImage: {
-    height:20,
-    width:20
+    height: crossResponsiveWidth(4, 4, 4, 4),
+    width: crossResponsiveHeight(4, 4, 4, 4)
   }
 });
