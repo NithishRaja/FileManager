@@ -115,4 +115,5 @@
 * updated AndroidManifest.xml to fix app in portrait mode
 * start updating styles at 1145
 * finished styling using `react-native-cross-platform-responsive-dimensions` api at 1208
-* 
+* updated **Icons** component to display thumbnail of image and audio files
+* **ended at 1236 on 28-01-2018**

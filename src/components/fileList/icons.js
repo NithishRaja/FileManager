@@ -1,7 +1,8 @@
 import React, {Component} from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Image } from "react-native";
 import Icon from "react-native-vector-icons/Entypo";
-import { crossResponsiveWidth, crossResponsiveHeight } from "react-native-cross-platform-responsive-dimensions";
+import { crossResponsiveWidth, crossResponsiveHeight, crossPlatformDevice } from "react-native-cross-platform-responsive-dimensions";
+import RNFS from "react-native-fs";
 
 export default class Icons extends Component{
 
@@ -15,19 +16,19 @@ export default class Icons extends Component{
       text: RegExp("\.(txt)$", "i")
     };
 
-    this._plainFolderJSX = <Icon name="folder" size={50} />;
+    this._plainFolderJSX = <Icon name="folder" size={crossPlatformDevice(50, 50, 50, 50)} />;
 
-    this._plainFileJSX = <Icon name="news" size={50} />;
+    this._plainFileJSX = <Icon name="news" size={crossPlatformDevice(50, 50, 50, 50)} />;
 
-    this._audioFileJSX = <Icon name="music" size={50} />;
+    this._audioFileJSX = <Icon name="music" size={crossPlatformDevice(50, 50, 50, 50)} />;
 
-    this._imageFileJSX = <Icon name="image-inverted" size={50} />;
+    this._imageFileJSX = <Icon name="image-inverted" size={crossPlatformDevice(50, 50, 50, 50)} />;
 
-    this._textFileJSX = <Icon name="text-document-inverted" size={50} />;
+    this._textFileJSX = <Icon name="text-document-inverted" size={crossPlatformDevice(50, 50, 50, 50)} />;
 
-    this._videoFileJSX = <Icon name="video" size={50} />;
+    this._videoFileJSX = <Icon name="video" size={crossPlatformDevice(50, 50, 50, 50)} />;
 
-    this._unknownObjectJSX = <Icon name="traffic-cone" size={50} />;
+    this._unknownObjectJSX = <Icon name="traffic-cone" size={crossPlatformDevice(50, 50, 50, 50)} />;
 
   }
 
@@ -36,11 +37,11 @@ export default class Icons extends Component{
       this._componentLayoutJSX = this._plainFolderJSX;
     }else if(props.isFile){
       if(props.type==="image"){
-        this._componentLayoutJSX = this._imageFileJSX;
+        this._componentLayoutJSX = <Image source={{uri:`file://${props.path}`}} style={styles.imageIcon} />;
       }else if(props.type==="audio"){
         this._componentLayoutJSX = this._audioFileJSX;
       }else if(props.type==="video"){
-        this._componentLayoutJSX = this._videoFileJSX;
+        this._componentLayoutJSX = <Image source={{uri:`file://${props.path}`}} style={styles.videoIcon} />;
       }else if(props.type==="text"){
         this._componentLayoutJSX = this._textFileJSX;
       }else{
@@ -68,8 +69,12 @@ export default class Icons extends Component{
 }
 
 const styles = StyleSheet.create({
-  icon:{
+  imageIcon: {
     width: crossResponsiveWidth(10, 10, 10, 10),
-    height: crossResponsiveHeight(10, 10, 10, 10)
+    height: crossResponsiveHeight(9, 9, 9, 9)
+  },
+  videoIcon: {
+    width: crossResponsiveWidth(20, 20, 20, 20),
+    height: crossResponsiveHeight(8, 8, 8, 8)
   }
 });
