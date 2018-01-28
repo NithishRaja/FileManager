@@ -107,4 +107,10 @@
 * rename **Icon** component to **Icons** component
 * finished updating **Icons** component to use `react-native-vector-icons` at 1808
 * removed `DrawerLayoutAndroid` from **Main** component at 1811
+* finished installing `react-native-cross-platform-responsive-dimensions` at 1827
+* **ended at 1827 on 27-01-2018**
+
+* **started at 1133 on 28-01-2018**
+* install and link `react-native-device-info` at 1134
+* updated AndroidManifest.xml to fix app in portrait mode
 * 
