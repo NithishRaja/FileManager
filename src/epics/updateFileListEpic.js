@@ -68,11 +68,11 @@ export default function(action$){
             let k=0;
             if(response[j].isDirectory){
               while(k<name.length&&k<response[j].name.length){
-                if(name[k].toString().toLowerCase().charCodeAt(0)>response[j].name[k].toString().toLowerCase().charCodeAt(0)){
+                if(name[k].toString().toLowerCase()>response[j].name[k].toString().toLowerCase()){
                   name = response[j].name;
                   pos = j;
                   break;
-                }else if(name[k].toString().toLowerCase().charCodeAt(0)===response[j].name[k].toString().toLowerCase().charCodeAt(0)){
+                }else if(name[k].toString().toLowerCase()===response[j].name[k].toString().toLowerCase()){
                   ++k;
                 }else{
                   break;
@@ -94,11 +94,11 @@ export default function(action$){
             let k=0;
             if(response[j].isFile){
               while(k<name.length&&k<response[j].name.length){
-                if(name[k].toString().toLowerCase().charCodeAt(0)>response[j].name[k].toString().toLowerCase().charCodeAt(0)){
+                if(name[k].toString().toLowerCase()>response[j].name[k].toString().toLowerCase()){
                   name = response[j].name;
                   pos = j;
                   break;
-                }else if(name[k].toString().toLowerCase().charCodeAt(0)===response[j].name[k].toString().toLowerCase().charCodeAt(0)){
+                }else if(name[k].toString().toLowerCase()===response[j].name[k].toString().toLowerCase()){
                   ++k;
                 }else{
                   break;

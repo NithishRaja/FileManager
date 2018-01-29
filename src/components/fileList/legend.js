@@ -63,7 +63,16 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgb(255, 255, 255)',
   },
   listItem: {
-    padding: 5
+    // elevation: 3,
+    // borderBottomColor: "rgba(255, 100, 0, 0.6)",
+    // borderBottomWidth: 2,
+    borderLeftColor: "rgba(255, 100, 0, 0.6)",
+    borderLeftWidth: 2,
+    backgroundColor: "rgba(255, 100, 0, 0.4)",
+    borderRadius: 10,
+    padding: 5,
+    marginTop: 4,
+    marginLeft: 2
   },
   listItemText: {
     fontSize: crossResponsiveFontSize(2, 2, 2, 2)

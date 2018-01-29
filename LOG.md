@@ -117,3 +117,11 @@
 * finished styling using `react-native-cross-platform-responsive-dimensions` api at 1208
 * updated **Icons** component to display thumbnail of image and audio files
 * **ended at 1236 on 28-01-2018**
+
+* **started at 1224 on 29-01-2018**
+* testing custom header component at 1240
+* **ended at 1330 on 29-01-2018**
+
+* **started at 1854 on 29-01-2018**
+* updated styles to make buttons in **Legend** component more visible at 1925
+* 
