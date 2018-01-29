@@ -1,7 +1,6 @@
 import React, {Component} from "react";
-import { Image, View, Text, StyleSheet, TouchableNativeFeedback } from "react-native";
+import { Image, View, Text, StyleSheet } from "react-native";
 import { crossResponsiveWidth, crossPlatformDevice, crossResponsiveFontSize } from "react-native-cross-platform-responsive-dimensions";
-import Icon from "react-native-vector-icons/FontAwesome";
 
 export default class Header extends Component{
 
@@ -11,16 +10,8 @@ export default class Header extends Component{
   }
 
   _updateComponentLayout(props){
-    const {navigate} = props.navigation;
     this._componentLayoutJSX = <View style={styles.header}>
       <Text style={styles.headerText}>FileManager</Text>
-      <TouchableNativeFeedback
-        onPress={(event) => navigate("Settings")}
-        >
-        <View style={styles.settings}>
-          <Icon name="gear" size={crossPlatformDevice(30, 30, 30, 30)} />
-        </View>
-      </TouchableNativeFeedback>
     </View>;
   }
 
@@ -51,8 +42,5 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontSize: crossResponsiveFontSize(3, 3, 3, 3)
-  },
-  settings: {
-    padding: 0
   }
 });

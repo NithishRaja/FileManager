@@ -124,4 +124,6 @@
 
 * **started at 1854 on 29-01-2018**
 * updated styles to make buttons in **Legend** component more visible at 1925
-* 
+* updated separator in **Legend** component to use vector icons
+* removed `Settings` route at 1942
+* **ended at 1950 on 29-01-2018**

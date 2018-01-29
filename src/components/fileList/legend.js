@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import { Text, View, FlatList, Alert, StyleSheet, TouchableNativeFeedback, Image } from "react-native";
 import { crossResponsiveWidth, crossResponsiveHeight, crossResponsiveFontSize } from "react-native-cross-platform-responsive-dimensions";
+import Icon from "react-native-vector-icons/Entypo";
 
 export default class Legend extends Component{
 
@@ -12,13 +13,14 @@ export default class Legend extends Component{
   _itemSeparatorComponent(){
     return(
       <View style={styles.listItemSeparator}>
-        <Image source={require("./../../../static/images/next.png")} style={styles.listItemSeparatorImage} />
+        <Icon name="chevron-right" size={20} />
       </View>
     );
   }
 
   _updateComponentLayout(props, state){
     this._componentLayoutJSX = <FlatList
+      showsHorizontalScrollIndicator={false}
       style={styles.container}
       data={props.currentPath}
       keyExtractor={(dir, index) => index}
@@ -61,18 +63,16 @@ const styles = StyleSheet.create({
   container: {
     width: crossResponsiveWidth(100, 100, 100, 100),
     backgroundColor: 'rgb(255, 255, 255)',
+    paddingLeft: 4,
+    paddingBottom: 4
   },
   listItem: {
-    // elevation: 3,
-    // borderBottomColor: "rgba(255, 100, 0, 0.6)",
-    // borderBottomWidth: 2,
     borderLeftColor: "rgba(255, 100, 0, 0.6)",
     borderLeftWidth: 2,
     backgroundColor: "rgba(255, 100, 0, 0.4)",
     borderRadius: 10,
     padding: 5,
-    marginTop: 4,
-    marginLeft: 2
+    marginTop: 4
   },
   listItemText: {
     fontSize: crossResponsiveFontSize(2, 2, 2, 2)

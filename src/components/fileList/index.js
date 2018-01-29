@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import { FlatList, View, Text, StyleSheet, Dimensions, TouchableNativeFeedback, ToastAndroid , Linking } from "react-native";
 import { crossResponsiveFontSize } from "react-native-cross-platform-responsive-dimensions";
-
 import Icons from "./icons";
 import Legend from "./legend";
 

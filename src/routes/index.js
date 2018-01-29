@@ -11,10 +11,7 @@ export default App = StackNavigator({
     navigationOptions: {
       title: "FileManager",
       header: ({navigation}) => {
-        return <Header navigation={navigation} />;
-      },
-      headerRight: () => {
-        return <View><Text>{"right"}</Text></View>
+        return <Header />;
       }
     }
   },
@@ -22,14 +19,6 @@ export default App = StackNavigator({
     screen: ImageViewer,
     navigationOptions: {
       headerTitle: 'Image'
-    }
-  },
-  Settings: {
-    screen: () => {
-      return <View><Text>hello</Text></View>;
-    },
-    navigationOptions: {
-      headerTitle: 'Settings'
     }
   }
 });
