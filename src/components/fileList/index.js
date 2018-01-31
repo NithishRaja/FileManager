@@ -34,7 +34,7 @@ export default class FileList extends Component{
     );
   }
 
-  _updateComponentLayout(props){
+  _updateComponentLayout(props, state){
     this._componentLayoutJSX = <FlatList
       data={props.fileList}
       keyExtractor={this._keyExtractor}
@@ -80,11 +80,11 @@ export default class FileList extends Component{
   }
 
   componentWillMount(){
-    this._updateComponentLayout(this.props);
+    this._updateComponentLayout(this.props, this.state);
   }
 
-  componentWillUpdate(nextProps){
-    this._updateComponentLayout(nextProps);
+  componentWillUpdate(nextProps, nextState){
+    this._updateComponentLayout(nextProps, nextState);
   }
 
   render(){

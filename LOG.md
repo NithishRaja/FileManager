@@ -127,3 +127,7 @@
 * updated separator in **Legend** component to use vector icons
 * removed `Settings` route at 1942
 * **ended at 1950 on 29-01-2018**
+
+* **started at 1709 on 31-01-2018**
+* try out refresh indicator for FlatList at 1710
+* 

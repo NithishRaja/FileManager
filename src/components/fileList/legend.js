@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { Text, View, FlatList, Alert, StyleSheet, TouchableNativeFeedback, Image } from "react-native";
+import { Text, View, FlatList, Alert, StyleSheet, TouchableNativeFeedback, Image, ToastAndroid } from "react-native";
 import { crossResponsiveWidth, crossResponsiveHeight, crossResponsiveFontSize } from "react-native-cross-platform-responsive-dimensions";
 import Icon from "react-native-vector-icons/Entypo";
 
@@ -28,6 +28,9 @@ export default class Legend extends Component{
         return(
           <TouchableNativeFeedback
             onPress={(event) => {
+              if(props.currentPath.length===1){
+                ToastAndroid.show("inside root directory. cannot go back", ToastAndroid.SHORT);
+              }
               props.startFileListUpdate(props.currentPath.slice(0, dir.index+1));
             }}
             background={TouchableNativeFeedback.SelectableBackground()}
