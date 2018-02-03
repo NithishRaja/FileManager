@@ -3,6 +3,7 @@
 ## getting started
 * run `npm install -g react-native-cli`
 * run `npm install`
+* run `react-native link`
 
 ## viewing app
 * connect device to system and [enable developer options](https://www.androidcentral.com/how-enable-developer-settings-android-42) or start android/ios simulator
