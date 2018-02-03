@@ -128,6 +128,6 @@
 * removed `Settings` route at 1942
 * **ended at 1950 on 29-01-2018**
 
-* **started at 1709 on 31-01-2018**
-* try out refresh indicator for FlatList at 1710
-* 
+# **understood why few files always are opened with PDF viewer**
+* PDF viewer was selected as **always open with** in the past
+* file names contain `.` followed by strings. **Linking** api confuses this with file ending
