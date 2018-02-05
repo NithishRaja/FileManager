@@ -36,11 +36,14 @@ export default class FileList extends Component{
 
   _updateComponentLayout(props, state){
     this._componentLayoutJSX = <FlatList
-      data={props.fileList}
+      onRefresh={() => props.startFileListUpdate(props.currentPath)}
+      refreshing={props.fileList.status}
+      data={props.fileList.payload}
       keyExtractor={this._keyExtractor}
       renderItem={(file) => {
         return(
           <TouchableNativeFeedback
+
             onPress={(event) => {
               if(file.item.isFile){
                 if(file.item.type==="image"){

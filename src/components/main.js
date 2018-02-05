@@ -17,7 +17,7 @@ export default class App extends Component{
   }
 
   componentWillMount(){
-    if(this.props.fileList===null){
+    if(this.props.fileList.payload===null){
       this.props.startFileListUpdate(this.props.currentPath);
     }
     this._updateComponentLayout(this.props);

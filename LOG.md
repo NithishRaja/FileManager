@@ -131,3 +131,8 @@
 # **understood why few files always are opened with PDF viewer**
 * PDF viewer was selected as **always open with** in the past
 * file names contain `.` followed by strings. **Linking** api confuses this with file ending
+
+* **started at 1809 on 05-02-2018**
+* start modifying fileList epic and reducer to allow refreshing at 1814
+* finished adding refresh support to app at 1819
+* 
