@@ -1,21 +1,25 @@
 import React, {Component} from "react";
-import { View, Text, Image, Dimensions, StyleSheet } from "react-native";
+import { View, Text, Image, FlatList, Dimensions, StyleSheet } from "react-native";
 import { crossResponsiveWidth, crossResponsiveHeight } from "react-native-cross-platform-responsive-dimensions";
 
 export default class ImageViewer extends Component{
   constructor(props){
     super(props);
 
+    this.state = {
+      data: ["image1", "image2", "image3"]
+    }
+
     this._defaultImageJSX = <Image source={require("./../../static/images/image.png")} style={styles.image} />
 
   }
 
   _updateComponentLayout(props, state){
-    if(props.selectedImage!==null){
-      this._componentLayoutJSX = <Image source={{uri:`file://${props.selectedImage.path}`}} style={styles.image} />;
-    }else{
-      this._componentLayoutJSX = this._defaultImageJSX;
-    }
+    _componentLayoutJSX = <FlatList
+      data={state.data}
+      keyExtractor={(file, index) => return index}
+      renderItem={({item}) => <View><Text>{item}</Text></View>}
+      ListEmptyComponent={() => <View><Text>No photos found.</Text></View>} />;
   }
 
   componentWillMount(){

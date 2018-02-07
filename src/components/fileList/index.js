@@ -43,25 +43,35 @@ export default class FileList extends Component{
       renderItem={(file) => {
         return(
           <TouchableNativeFeedback
-
             onPress={(event) => {
               if(file.item.isFile){
-                if(file.item.type==="image"){
-                  props.updateSelectedImage(file.item);
-                  props.navigate("Image");
-                }else{
-                  const url = `file://${file.item.path}`;
-                  Linking.canOpenURL(url).then(supported => {
-                    if (!supported) {
-                      ToastAndroid.show("file type not supported", ToastAndroid.SHORT);
-                    } else {
-                      return Linking.openURL(url);
-                    }
-                  }).catch(err => {
-                    console.error('An error occurred', err);
-                    ToastAndroid.show("unable to open file", ToastAndroid.SHORT);
-                  });
-                }
+                const url = `file://${file.item.path}`;
+                Linking.canOpenURL(url).then(supported => {
+                  if (!supported) {
+                    ToastAndroid.show("file type not supported", ToastAndroid.SHORT);
+                  } else {
+                    return Linking.openURL(url);
+                  }
+                }).catch(err => {
+                  console.error('An error occurred', err);
+                  ToastAndroid.show("unable to open file", ToastAndroid.SHORT);
+                });
+                // if(file.item.type==="image"){
+                //   props.updateSelectedImage(file.item);
+                //   props.navigate("Image");
+                // }else{
+                //   const url = `file://${file.item.path}`;
+                //   Linking.canOpenURL(url).then(supported => {
+                //     if (!supported) {
+                //       ToastAndroid.show("file type not supported", ToastAndroid.SHORT);
+                //     } else {
+                //       return Linking.openURL(url);
+                //     }
+                //   }).catch(err => {
+                //     console.error('An error occurred', err);
+                //     ToastAndroid.show("unable to open file", ToastAndroid.SHORT);
+                //   });
+                // }
               }else if(file.item.isDirectory){
                 props.currentPath.push(file.item.name);
                 props.startFileListUpdate(props.currentPath);

@@ -30,8 +30,9 @@ export default class Legend extends Component{
             onPress={(event) => {
               if(props.currentPath.length===1){
                 ToastAndroid.show("inside root directory. cannot go back", ToastAndroid.SHORT);
+              }else{
+                props.startFileListUpdate(props.currentPath.slice(0, dir.index+1));
               }
-              props.startFileListUpdate(props.currentPath.slice(0, dir.index+1));
             }}
             background={TouchableNativeFeedback.SelectableBackground()}
             >

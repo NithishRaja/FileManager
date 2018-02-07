@@ -139,3 +139,11 @@
 
 * **started at 1624 on 07-02-2018**
 * switched back to `DrawerNavigator` at 1636
+* start writing boilerplate for ImageViewer at 1639
+* **ended at 1640 on 07-02-2018**
+
+* **started at 1706 on 07-02-2018**
+* finished basic boilerplate for **ImageViewer** at 1721
+* phone is not responding
+* stopping for now
+* **ended at 1722 on 07-02-2018**
