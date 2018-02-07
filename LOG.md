@@ -136,3 +136,6 @@
 * start modifying fileList epic and reducer to allow refreshing at 1814
 * finished adding refresh support to app at 1819
 * **ended at 1821 on 05-02-2018**
+
+* **started at 1624 on 07-02-2018**
+* switched back to `DrawerNavigator` at 1636
