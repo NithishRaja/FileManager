@@ -155,4 +155,6 @@
 
 * **started at 1050 on 09-02-2018**
 * finished adding styles to **ImageViewer** at 1110
+* wrote reducer to hold image list at 1116
+* populated **imageListReducer** with dummy values
 * 

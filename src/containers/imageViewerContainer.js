@@ -4,7 +4,7 @@ import ImageViewer from "./../components/imageViewer";
 
 const mapStateToProps = (state) => {
   return {
-    
+    imageList: state.imageList
   }
 };
 

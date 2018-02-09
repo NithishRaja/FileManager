@@ -6,16 +6,12 @@ export default class ImageViewer extends Component{
   constructor(props){
     super(props);
 
-    this.state = {
-      data: ["image1", "image2", "image3"]
-    }
-
   }
 
   _updateComponentLayout(props, state){
     this._defaultImage = <Image source={require("./../../../static/images/image.png")} style={styles.image} />;
     this._componentLayoutJSX = <FlatList
-      data={state.data}
+      data={props.imageList}
       keyExtractor={(file, index) => index}
       renderItem={({item}) => {
         return(
