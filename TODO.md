@@ -3,6 +3,7 @@
 * switch to internal storage only
 * update code to display only part of long names
 * add header for imageList
+* populate imageList with real data
 * enable traversing folders in imageList
 * add legend for imageList
 * try to improve **updateFileListEpic** performance

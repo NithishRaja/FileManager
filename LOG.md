@@ -161,3 +161,7 @@
 * finished writing action for starting image list update at 1126
 * finished adding support for refreshing imageList at 1148
 * **ended at 1148 0n 09-02-2018**
+
+* **started at 1712 on 09-02-2018**
+* wrote code to read and display images from storage at 1732
+* **ended at 1733 on 09-02-2018**

@@ -9,7 +9,6 @@ export default class ImageViewer extends Component{
   }
 
   _updateComponentLayout(props, state){
-    this._defaultImage = <Image source={require("./../../../static/images/image.png")} style={styles.image} />;
     this._componentLayoutJSX = <FlatList
       data={props.imageList.payload}
       onRefresh={() => props.startImageListUpdate(props.currentPath)}
@@ -19,10 +18,10 @@ export default class ImageViewer extends Component{
         return(
           <View style={styles.folder}>
             <View style={styles.imageContainer}>
-            {this._defaultImage}
+            <Image source={{uri:item.node.image.uri}} style={styles.image} />
             </View>
             <View style={styles.textContainer}>
-              <Text>{item}</Text>
+              <Text>{item.node.group_name}</Text>
             </View>
           </View>
         );
