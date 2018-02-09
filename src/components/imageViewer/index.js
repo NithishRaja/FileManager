@@ -32,6 +32,9 @@ export default class ImageViewer extends Component{
   }
 
   componentWillMount(){
+    if(this.props.imageList===null){
+      this.props.startImageListUpdate();
+    }
     this._updateComponentLayout(this.props, this.state);
   }
 

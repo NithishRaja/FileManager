@@ -157,4 +157,6 @@
 * finished adding styles to **ImageViewer** at 1110
 * wrote reducer to hold image list at 1116
 * populated **imageListReducer** with dummy values
+* finished writing epic to get images asynchronously at 1121
+* finished writing action for starting image list update at 1126
 * 

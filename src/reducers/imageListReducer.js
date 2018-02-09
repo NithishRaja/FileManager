@@ -1,4 +1,9 @@
 
 export default function(state=null, action){
-  return ["first image", "secong image", "third image", "fourth image", "fifth image"];
+  switch(action.type){
+    case "UPDATE_IMAGE_LIST":
+      return action.payload;
+    default:
+      return state;
+  }
 }

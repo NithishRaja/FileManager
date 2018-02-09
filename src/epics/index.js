@@ -1,8 +1,10 @@
 import { combineEpics, createEpicMiddleware } from "redux-observable";
 import updateFileListEpic from "./updateFileListEpic";
+import updateImageListEpic from "./updateImageListEpic";
 
 const allEpics = combineEpics(
-  updateFileListEpic
+  updateFileListEpic,
+  updateImageListEpic
 );
 
 const epicMiddleware = createEpicMiddleware(
