@@ -11,7 +11,9 @@ export default class ImageViewer extends Component{
   _updateComponentLayout(props, state){
     this._defaultImage = <Image source={require("./../../../static/images/image.png")} style={styles.image} />;
     this._componentLayoutJSX = <FlatList
-      data={props.imageList}
+      data={props.imageList.payload}
+      onRefresh={() => props.startImageListUpdate(props.currentPath)}
+      refreshing={props.imageList.status}
       keyExtractor={(file, index) => index}
       renderItem={({item}) => {
         return(
@@ -32,7 +34,7 @@ export default class ImageViewer extends Component{
   }
 
   componentWillMount(){
-    if(this.props.imageList===null){
+    if(this.props.imageList.payload===null){
       this.props.startImageListUpdate();
     }
     this._updateComponentLayout(this.props, this.state);

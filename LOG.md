@@ -159,4 +159,5 @@
 * populated **imageListReducer** with dummy values
 * finished writing epic to get images asynchronously at 1121
 * finished writing action for starting image list update at 1126
-* 
+* finished adding support for refreshing imageList at 1148
+* **ended at 1148 0n 09-02-2018**

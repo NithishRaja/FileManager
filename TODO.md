@@ -1,11 +1,10 @@
 # TODO
 
-* switch to drawer navigation
 * switch to internal storage only
 * update code to display only part of long names
-* write boilerplate for images
-* write container and reducer dor images
-* write epic to get images
+* add header for imageList
+* enable traversing folders in imageList
+* add legend for imageList
 * try to improve **updateFileListEpic** performance
 * update styles
 * provide comments
