@@ -86,6 +86,7 @@ export default class FileList extends Component{
           </TouchableNativeFeedback>
         );
       }}
+      showsVerticalScrollIndicator={false}
       ItemSeparatorComponent={this._itemSeparatorComponent}
       ListEmptyComponent={this._listEmptyComponent}
       ListHeaderComponent={() => <Legend startFileListUpdate={props.startFileListUpdate} currentPath={props.currentPath} />}

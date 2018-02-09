@@ -147,3 +147,12 @@
 * phone is not responding
 * stopping for now
 * **ended at 1722 on 07-02-2018**
+
+* **started at 1441 on 08-02-2018**
+* added styles to **ImageViewer** at 1518
+* stopping due to no internet
+* **ended at 1519 on 08-02-2018**
+
+* **started at 1050 on 09-02-2018**
+* finished adding styles to **ImageViewer** at 1110
+* 
