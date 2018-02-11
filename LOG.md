@@ -169,4 +169,6 @@
 * **started at 1425 on 11-02-2018**
 * wrote **Header** component for ImageViewer at 1433
 * added header to ImageViewer at 1433
-* 
+* start sorting imageList based on folder
+* updated **imageListEpic** to group images at 1458
+* **ended at 1458 on 11-02-2018**

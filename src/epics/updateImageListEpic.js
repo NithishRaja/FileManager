@@ -28,12 +28,38 @@ function getAllPhotos(end_cursor){
     });
 }
 
+function quickGroup(array){
+  let isGrouped = true;
+  for(let i=0;i<array.length-1;++i){
+    if(array[i].node.group_name!=array[0].node.group_name){
+      isGrouped = false;
+      break;
+    }
+  }
+  if(!isGrouped){
+    let notEqual = [], equal = [];
+    for(let i=0;i<array.length;++i){
+      if(array[i].node.group_name==array[0].node.group_name){
+        equal.push(array[i]);
+      }else{
+        notEqual.push(array[i]);
+      }
+    }
+    notEqual = quickGroup(notEqual);
+    return equal.concat(notEqual);
+  }else{
+    return array;
+  }
+}
+
 export default function(action$){
   return action$.ofType("START_IMAGE_LIST_UPDATE")
     .mergeMap(action => {
       return getAllPhotos();
     })
     .map(response => {
+      response = quickGroup(response);
+      response.forEach(r => console.log(r.node.group_name););
       return {type: "UPDATE_IMAGE_LIST", payload: response};
     });
 }
