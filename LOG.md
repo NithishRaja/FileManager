@@ -165,3 +165,8 @@
 * **started at 1712 on 09-02-2018**
 * wrote code to read and display images from storage at 1732
 * **ended at 1733 on 09-02-2018**
+
+* **started at 1425 on 11-02-2018**
+* wrote **Header** component for ImageViewer at 1433
+* added header to ImageViewer at 1433
+* 

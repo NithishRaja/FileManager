@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import { View, Text, Image, FlatList, Dimensions, StyleSheet } from "react-native";
 import { crossResponsiveWidth, crossResponsiveHeight } from "react-native-cross-platform-responsive-dimensions";
+import Header from "./header";
 
 export default class ImageViewer extends Component{
   constructor(props){
@@ -9,27 +10,32 @@ export default class ImageViewer extends Component{
   }
 
   _updateComponentLayout(props, state){
-    this._componentLayoutJSX = <FlatList
-      data={props.imageList.payload}
-      onRefresh={() => props.startImageListUpdate(props.currentPath)}
-      refreshing={props.imageList.status}
-      keyExtractor={(file, index) => index}
-      renderItem={({item}) => {
-        return(
-          <View style={styles.folder}>
-            <View style={styles.imageContainer}>
-            <Image source={{uri:item.node.image.uri}} style={styles.image} />
+    this._componentLayoutJSX = (
+      <View>
+      <Header />
+      <FlatList
+        data={props.imageList.payload}
+        onRefresh={() => props.startImageListUpdate(props.currentPath)}
+        refreshing={props.imageList.status}
+        keyExtractor={(file, index) => index}
+        renderItem={({item}) => {
+          return(
+            <View style={styles.folder}>
+              <View style={styles.imageContainer}>
+              <Image source={{uri:item.node.image.uri}} style={styles.image} />
+              </View>
+              <View style={styles.textContainer}>
+                <Text>{item.node.group_name}</Text>
+              </View>
             </View>
-            <View style={styles.textContainer}>
-              <Text>{item.node.group_name}</Text>
-            </View>
-          </View>
-        );
-      }}
-      ListEmptyComponent={() => <View><Text>No photos found.</Text></View>}
-      numColumns={2}
-      columnWrapperStyle={styles.column}
-      />;
+          );
+        }}
+        ListEmptyComponent={() => <View><Text>No photos found.</Text></View>}
+        numColumns={2}
+        columnWrapperStyle={styles.column}
+        />
+        </View>
+    );
   }
 
   componentWillMount(){
