@@ -172,3 +172,6 @@
 * start sorting imageList based on folder
 * updated **imageListEpic** to group images at 1458
 * **ended at 1458 on 11-02-2018**
+
+* **started at 1517 on 15-02-2018**
+* 

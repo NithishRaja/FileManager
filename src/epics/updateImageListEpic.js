@@ -3,15 +3,11 @@ import {CameraRoll} from "react-native";
 
 function getAllPhotos(end_cursor){
   let object = null;
+  let options = {first: 20};
   if(end_cursor){
-    var options = {
-      first: 20, after: end_cursor
-    };
-  }else{
-    options = {
-      first: 20
-    }
+    options.after = end_cursor;
   }
+
   return CameraRoll.getPhotos(options)
     .then(res => {
       if(res.page_info.has_next_page){
@@ -45,11 +41,26 @@ function quickGroup(array){
         notEqual.push(array[i]);
       }
     }
+    equal = {images: equal};
     notEqual = quickGroup(notEqual);
-    return equal.concat(notEqual);
+    return [equal].concat(notEqual);
   }else{
-    return array;
+    return {images: array};
   }
+}
+
+function simplify(array){
+  for(let i=0;i<array.length;++i){
+    array[i].group_name = array[i].images[0].node.group_name;
+    for(let j=0;j<array[i].images.length;++j){
+      array[i].images[j] = {
+        uri: array[i].images[j].node.image.uri,
+        height: array[i].images[j].node.image.height,
+        width: array[i].images[j].node.image.width
+      };
+    }
+  }
+  return array;
 }
 
 export default function(action$){
@@ -59,7 +70,8 @@ export default function(action$){
     })
     .map(response => {
       response = quickGroup(response);
-      response.forEach(r => console.log(r.node.group_name););
+      response = simplify(response);
+      console.log(response);
       return {type: "UPDATE_IMAGE_LIST", payload: response};
     });
 }
