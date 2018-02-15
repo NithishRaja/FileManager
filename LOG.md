@@ -174,4 +174,7 @@
 * **ended at 1458 on 11-02-2018**
 
 * **started at 1517 on 15-02-2018**
-* 
+* finished modifying **updateImageListEpic** to group images by group_name at 1542
+* start refactoring **ImageViewer** to display folder contents at 1546
+* finished nesting `StackNavigator` inside `DrawerNavigator` at 1609
+* **ended at 1609 on 15-02-2018**
