@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     width: crossResponsiveWidth(100, 100, 100, 100),
     height: crossResponsiveHeight(90, 90, 90, 90),
+    backgroundColor: 'rgb(0, 0, 0)',
     alignItems: 'center'
   }
 });
