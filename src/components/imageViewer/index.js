@@ -1,13 +1,21 @@
 import { StackNavigator } from 'react-navigation';
-import imageFolderList from "./../../containers/imageFolderListContainer";
+import ImageFolderList from "./../../containers/imageFolderListContainer";
+import ImageFileList from "./imageFileList";
+import SelectedImage from "./selectedImage";
 
 const ImageViewer = StackNavigator({
   Home: {
-    screen: imageFolderList,
+    screen: ImageFolderList,
     navigationOptions: {
       title: "Gallery"
     }
    },
+  Files: {
+    screen: ImageFileList
+  },
+  Image: {
+    screen: SelectedImage
+  }
 });
 
 export default ImageViewer;

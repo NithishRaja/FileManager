@@ -178,3 +178,10 @@
 * start refactoring **ImageViewer** to display folder contents at 1546
 * finished nesting `StackNavigator` inside `DrawerNavigator` at 1609
 * **ended at 1609 on 15-02-2018**
+
+* **started at 1038 on 18-02-2018**
+* start writing boilerplate for **imageFileList** at 1039
+* finished boilerplate for **imageFileList** at 1105
+* bug found: unable to navigate back to FileManager screen after entering Gallery screen
+* finished writing boilerplate for **SelectedImage** at 1117
+* able to view image folders, image in each folder and each image

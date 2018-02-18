@@ -2,14 +2,14 @@ import React, {Component} from "react";
 import { View, Text, Image, FlatList, Dimensions, TouchableNativeFeedback, Alert, StyleSheet } from "react-native";
 import { crossResponsiveWidth, crossResponsiveHeight } from "react-native-cross-platform-responsive-dimensions";
 
-export default class imageFolderList extends Component{
+export default class ImageFolderList extends Component{
   constructor(props){
     super(props);
 
   }
 
   _updateComponentLayout(props, state){
-    console.log(props.navigation);
+    const {navigate} = this.props.navigation;
     this._componentLayoutJSX = (
       <View>
 
@@ -22,7 +22,7 @@ export default class imageFolderList extends Component{
           return(
             <TouchableNativeFeedback
             onPress={event => {
-              Alert.alert(item.group_name);
+              navigate("Files", {data: item});
             }}
             background={TouchableNativeFeedback.SelectableBackground()}
               >
@@ -46,7 +46,6 @@ export default class imageFolderList extends Component{
   }
 
   componentWillMount(){
-    console.log(this.props);
     if(this.props.imageList.payload===null){
       this.props.startImageListUpdate();
     }
