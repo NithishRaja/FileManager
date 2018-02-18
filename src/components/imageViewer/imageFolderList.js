@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { View, Text, Image, FlatList, Dimensions, TouchableNativeFeedback, Alert, StyleSheet } from "react-native";
+import { View, Text, ImageBackground, FlatList, Dimensions, TouchableNativeFeedback, Alert, StyleSheet } from "react-native";
 import { crossResponsiveWidth, crossResponsiveHeight } from "react-native-cross-platform-responsive-dimensions";
 
 export default class ImageFolderList extends Component{
@@ -28,17 +28,19 @@ export default class ImageFolderList extends Component{
             background={TouchableNativeFeedback.SelectableBackground()}
               >
               <View style={styles.folder}>
-                <View style={styles.imageContainer}>
-                  <Image source={{uri:item.images[0].uri}} style={styles.image} />
-                </View>
-                <View style={styles.textContainer}>
-                  <Text>{item.group_name}</Text>
-                </View>
+                <ImageBackground
+                  source={{uri:item.images[0].uri}}
+                  style={styles.imageContainer}
+                  >
+                  <View style={styles.textContainer}>
+                    <Text style={styles.text}>{item.group_name}</Text>
+                  </View>
+                </ImageBackground>
               </View>
             </TouchableNativeFeedback>
           );
         }}
-        ListEmptyComponent={() => <View><Text>No photos found.</Text></View>}
+        ListEmptyComponent={() => <View style={styles.listEmptyContainer}><Text>No photos found</Text></View>}
         numColumns={2}
         columnWrapperStyle={styles.column}
         />
@@ -66,20 +68,21 @@ export default class ImageFolderList extends Component{
 }
 
 const styles = StyleSheet.create({
-  image: {
-    width: crossResponsiveWidth(40, 40, 40 ,40),
-    height: crossResponsiveHeight(20, 20, 20, 20)
-  },
   imageContainer: {
-    justifyContent: 'center',
-    alignItems: 'center'
+    width: crossResponsiveWidth(45, 45, 45 ,45),
+    height: crossResponsiveHeight(20, 20, 20, 20),
+    flexDirection: 'column',
+    justifyContent: 'flex-end'
   },
   textContainer: {
     backgroundColor: "rgba(100, 100, 100 ,0.4)",
+    paddingLeft: crossResponsiveWidth(2, 2, 2 ,2)
+  },
+  text: {
+    textDecorationColor: '#000'
   },
   folder: {
-    borderRightColor: "rgba(200, 200, 200 ,0.4)",
-    borderRightWidth: 2,
+    elevation: 4,
     width: crossResponsiveWidth(45, 45, 45 ,45),
   },
   column: {
@@ -87,5 +90,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 10,
     marginBottom: 10
+  },
+  listEmptyContainer: {
+    alignItems :'center',
+    alignSelf: 'center'
   }
 });

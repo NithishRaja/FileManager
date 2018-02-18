@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-import {Image} from "react-native";
+import {Image, View, StyleSheet} from "react-native";
+import { crossResponsiveWidth, crossResponsiveHeight } from "react-native-cross-platform-responsive-dimensions";
 
 export default class SelectedImage extends Component{
   constructor(props){
@@ -9,8 +10,19 @@ export default class SelectedImage extends Component{
 
   render(){
     const {params} = this.props.navigation.state;
+    const layout = params.data.height>params.data.width;
+    const height  = layout?crossResponsiveHeight(100,100,100,100):(params.data.height/params.data.width)*crossResponsiveWidth(100,100,100,100);
+    const width  = layout?(params.data.width/params.data.height)*crossResponsiveHeight(100,100,100,100):crossResponsiveWidth(100,100,100,100);
     return(
-      <Image source={{uri:params.data.uri}} style={{height: params.data.height, width: params.data.width}} />
+      <View style={styles.imageContainer}><Image source={{uri:params.data.uri}} style={{height: height, width: width}} /></View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  imageContainer: {
+    width: crossResponsiveWidth(100, 100, 100, 100),
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
+});

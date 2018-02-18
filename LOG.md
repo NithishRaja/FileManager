@@ -186,3 +186,6 @@
 * finished writing boilerplate for **SelectedImage** at 1117
 * able to view image folders, image in each folder and each image
 * bug fixed. bug was due to routes in DrawerNavigator and StackNavigator having same key
+* start styling **imageFileList** at 1123
+* use background image instead of image in **ImageFolderList** at 1200
+* finished styling at 1209
