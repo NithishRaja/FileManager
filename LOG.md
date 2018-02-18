@@ -193,4 +193,4 @@
 
 * **started at 1731 on 18-02-2018**
 * updated code to dynamically display header in **ImageViewer** at 1741
-* 
+* added styles to header in **ImageViewer** at 1753

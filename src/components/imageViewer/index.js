@@ -7,11 +7,21 @@ const ImageViewer = StackNavigator({
   Home: {
     screen: ImageFolderList,
     navigationOptions: {
-      title: "Gallery"
+      title: "Gallery",
+      headerStyle: {
+        backgroundColor: 'rgba(255, 100, 0, 0.7)'
+      },
+      headerTintColor: 'rgb(150, 80, 10)'
     }
    },
   Files: {
-    screen: ImageFileList
+    screen: ImageFileList,
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: 'rgba(255, 100, 0, 0.7)'
+      },
+      headerTintColor: 'rgb(150, 80, 10)'
+    }
   },
   Image: {
     screen: SelectedImage

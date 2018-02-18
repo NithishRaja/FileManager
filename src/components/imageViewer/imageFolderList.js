@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end'
   },
   textContainer: {
-    backgroundColor: "rgba(100, 100, 100 ,0.4)",
+    backgroundColor: "rgba(255, 100, 0 ,0.4)",
     paddingLeft: crossResponsiveWidth(2, 2, 2 ,2)
   },
   text: {
