@@ -27,8 +27,8 @@ const ImageViewer = StackNavigator({
     screen: SelectedImage,
     navigationOptions: {
       headerStyle: {
-        backgroundColor: 'rgba(255, 255, 255, 0.7)',
-      }
+        backgroundColor: 'rgba(255, 100, 0, 0.7)'
+      },
     }
   }
 });

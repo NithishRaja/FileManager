@@ -23,9 +23,10 @@ export default class SelectedImage extends Component{
 
 const styles = StyleSheet.create({
   imageContainer: {
+    marginTop: 20,
     width: crossResponsiveWidth(100, 100, 100, 100),
     height: crossResponsiveHeight(90, 90, 90, 90),
-    backgroundColor: 'rgb(0, 0, 0)',
+    backgroundColor: 'rgb(255, 255, 255)',
     alignItems: 'center'
   }
 });
