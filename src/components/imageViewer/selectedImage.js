@@ -14,7 +14,7 @@ export default class SelectedImage extends Component{
       aspectRatio: params.data.width/params.data.height,
       width: crossResponsiveWidth(100, 100, 100, 100),
     };
-    // console.log(image);
+    console.log(params);
     return(
       <View style={styles.imageContainer}><Image source={{uri:params.data.uri}} style={image} /></View>
     );

@@ -195,4 +195,6 @@
 * updated code to dynamically display header in **ImageViewer** at 1741
 * added styles to header in **ImageViewer** at 1753
 * updated styles in **SelectedImage** to display full image at 1821
-* 
+* finished styling header and background for **SelectedImage** at 1826
+* start linking **ImageViewer** with **FileList** at 1826
+* finished linking **ImageViewer** with **FileList** at 1833

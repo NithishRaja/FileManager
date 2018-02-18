@@ -40,48 +40,48 @@ export default class FileList extends Component{
       refreshing={props.fileList.status}
       data={props.fileList.payload}
       keyExtractor={this._keyExtractor}
-      renderItem={(file) => {
+      renderItem={({item}) => {
         return(
           <TouchableNativeFeedback
             onPress={(event) => {
-              if(file.item.isFile){
-                const url = `file://${file.item.path}`;
-                Linking.canOpenURL(url).then(supported => {
-                  if (!supported) {
-                    ToastAndroid.show("file type not supported", ToastAndroid.SHORT);
-                  } else {
-                    return Linking.openURL(url);
-                  }
-                }).catch(err => {
-                  console.error('An error occurred', err);
-                  ToastAndroid.show("unable to open file", ToastAndroid.SHORT);
-                });
-                // if(file.item.type==="image"){
-                //   props.updateSelectedImage(file.item);
-                //   props.navigate("Image");
-                // }else{
-                //   const url = `file://${file.item.path}`;
-                //   Linking.canOpenURL(url).then(supported => {
-                //     if (!supported) {
-                //       ToastAndroid.show("file type not supported", ToastAndroid.SHORT);
-                //     } else {
-                //       return Linking.openURL(url);
-                //     }
-                //   }).catch(err => {
-                //     console.error('An error occurred', err);
-                //     ToastAndroid.show("unable to open file", ToastAndroid.SHORT);
-                //   });
-                // }
-              }else if(file.item.isDirectory){
-                props.currentPath.push(file.item.name);
+              if(item.isFile){
+                const url = `file://${item.path}`;
+                // Linking.canOpenURL(url).then(supported => {
+                //   if (!supported) {
+                //     ToastAndroid.show("file type not supported", ToastAndroid.SHORT);
+                //   } else {
+                //     return Linking.openURL(url);
+                //   }
+                // }).catch(err => {
+                //   console.error('An error occurred', err);
+                //   ToastAndroid.show("unable to open file", ToastAndroid.SHORT);
+                // });
+                if(item.type==="image"){
+                  console.log(item);
+                  props.navigate("Image", {data: {uri: url, height: 100, width: 100}});
+                }else{
+                  const url = `file://${item.path}`;
+                  Linking.canOpenURL(url).then(supported => {
+                    if (!supported) {
+                      ToastAndroid.show("file type not supported", ToastAndroid.SHORT);
+                    } else {
+                      return Linking.openURL(url);
+                    }
+                  }).catch(err => {
+                    console.error('An error occurred', err);
+                    ToastAndroid.show("unable to open file", ToastAndroid.SHORT);
+                  });
+                }
+              }else if(item.isDirectory){
+                props.currentPath.push(item.name);
                 props.startFileListUpdate(props.currentPath);
               }
             }}
             background={TouchableNativeFeedback.SelectableBackground()}
             >
             <View style={styles.listItem}>
-              <Icons isFile={file.item.isFile} isDirectory={file.item.isDirectory} name={file.item.name} type={file.item.type} path={file.item.path} />
-              <Text style={styles.listItemText}>{file.item.name}</Text>
+              <Icons isFile={item.isFile} isDirectory={item.isDirectory} name={item.name} type={item.type} path={item.path} />
+              <Text style={styles.listItemText}>{item.name}</Text>
             </View>
           </TouchableNativeFeedback>
         );
