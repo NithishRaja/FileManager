@@ -3,10 +3,15 @@ import {View, Text, FlatList, Image, TouchableNativeFeedback, StyleSheet} from "
 import { crossResponsiveWidth, crossResponsiveHeight } from "react-native-cross-platform-responsive-dimensions";
 
 export default class ImageFileList extends Component{
+
   constructor(props){
     super(props);
 
   }
+
+  static navigationOptions = ({navigation}) => ({
+    title: navigation.state.params.data.group_name
+  });
 
   render(){
     const {navigate} = this.props.navigation;

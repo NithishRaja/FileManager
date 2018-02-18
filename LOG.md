@@ -189,3 +189,8 @@
 * start styling **imageFileList** at 1123
 * use background image instead of image in **ImageFolderList** at 1200
 * finished styling at 1209
+* **ended at 1219 on 18-02-2018**
+
+* **started at 1731 on 18-02-2018**
+* updated code to dynamically display header in **ImageViewer** at 1741
+* 
