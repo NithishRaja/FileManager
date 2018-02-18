@@ -10,11 +10,13 @@ export default class SelectedImage extends Component{
 
   render(){
     const {params} = this.props.navigation.state;
-    const layout = params.data.height>params.data.width;
-    const height  = layout?crossResponsiveHeight(100,100,100,100):(params.data.height/params.data.width)*crossResponsiveWidth(100,100,100,100);
-    const width  = layout?(params.data.width/params.data.height)*crossResponsiveHeight(100,100,100,100):crossResponsiveWidth(100,100,100,100);
+    const image = {
+      aspectRatio: params.data.width/params.data.height,
+      width: crossResponsiveWidth(100, 100, 100, 100),
+    };
+    // console.log(image);
     return(
-      <View style={styles.imageContainer}><Image source={{uri:params.data.uri}} style={{height: height, width: width}} /></View>
+      <View style={styles.imageContainer}><Image source={{uri:params.data.uri}} style={image} /></View>
     );
   }
 }
@@ -22,7 +24,7 @@ export default class SelectedImage extends Component{
 const styles = StyleSheet.create({
   imageContainer: {
     width: crossResponsiveWidth(100, 100, 100, 100),
-    alignItems: 'center',
-    justifyContent: 'center'
+    height: crossResponsiveHeight(90, 90, 90, 90),
+    alignItems: 'center'
   }
 });
