@@ -5,16 +5,16 @@ import {View, Text} from "react-native";
 import React from "react";
 
 export default App = DrawerNavigator({
-  Home: {
+  Directories: {
     screen: Main,
     navigationOptions: {
-      title: "FileManager"
+      drawerLabel: "Directories"
     }
   },
-  Image: {
+  Gallery: {
     screen: ImageViewer,
     navigationOptions: {
-      title: "images"
+      drawerLabel: "Gallery"
     }
   }
 });

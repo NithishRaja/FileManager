@@ -9,6 +9,7 @@ export default class ImageFolderList extends Component{
   }
 
   _updateComponentLayout(props, state){
+    console.log(props.navigation);
     const {navigate} = this.props.navigation;
     this._componentLayoutJSX = (
       <View>

@@ -185,3 +185,4 @@
 * bug found: unable to navigate back to FileManager screen after entering Gallery screen
 * finished writing boilerplate for **SelectedImage** at 1117
 * able to view image folders, image in each folder and each image
+* bug fixed. bug was due to routes in DrawerNavigator and StackNavigator having same key
