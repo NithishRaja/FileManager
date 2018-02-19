@@ -198,3 +198,10 @@
 * finished styling header and background for **SelectedImage** at 1826
 * start linking **ImageViewer** with **FileList** at 1826
 * finished linking **ImageViewer** with **FileList** at 1833
+* **ended at 1837 on 18-02-2018**
+
+* **started at 1136 on 19-02-2018**
+* start writing code to display only part of long names at 1140
+* finished code to display part of long names at 1150
+* added options icon to folders and files
+* **finished at 1204 on 19-02-2018**

@@ -1,6 +1,8 @@
 import React, {Component} from "react";
-import { FlatList, View, Text, StyleSheet, Dimensions, TouchableNativeFeedback, ToastAndroid , Linking } from "react-native";
-import { crossResponsiveFontSize } from "react-native-cross-platform-responsive-dimensions";
+import { FlatList, View, Text, StyleSheet, Dimensions, TouchableNativeFeedback, ToastAndroid , Linking, Alert } from "react-native";
+import { crossResponsiveFontSize, crossPlatformDevice } from "react-native-cross-platform-responsive-dimensions";
+import Icon from "react-native-vector-icons/SimpleLineIcons";
+
 import Icons from "./icons";
 import Legend from "./legend";
 
@@ -80,8 +82,24 @@ export default class FileList extends Component{
             background={TouchableNativeFeedback.SelectableBackground()}
             >
             <View style={styles.listItem}>
-              <Icons isFile={item.isFile} isDirectory={item.isDirectory} name={item.name} type={item.type} path={item.path} />
-              <Text style={styles.listItemText}>{item.name}</Text>
+              <View style={styles.listItemFolder}>
+                <Icons isFile={item.isFile} isDirectory={item.isDirectory} name={item.name} type={item.type} path={item.path} />
+                <Text style={styles.listItemText}>{item.name.length>30?`${item.name.split("").slice(0, 30).join("")}...`:item.name}</Text>
+              </View>
+              <TouchableNativeFeedback
+              onPress={event => Alert.alert(null,
+  null,
+  [
+    {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
+    {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+    {text: 'OK', onPress: () => console.log('OK Pressed')},
+  ])}
+                background={TouchableNativeFeedback.SelectableBackground()}
+                >
+                <View style={styles.options}>
+                  <Icon name="options-vertical" size={crossPlatformDevice(20, 20, 20, 20)} />
+                </View>
+              </TouchableNativeFeedback>
             </View>
           </TouchableNativeFeedback>
         );
@@ -114,15 +132,24 @@ const styles = StyleSheet.create({
     width: width,
     backgroundColor: 'rgb(255, 255 ,255)',
     flexDirection: 'row',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
     alignItems: 'center',
     paddingLeft: 15,
+    paddingRight: 5,
     paddingTop: 5,
     paddingBottom: 5
+  },
+  listItemFolder: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
   },
   listItemText: {
     fontSize: crossResponsiveFontSize(2, 2, 2, 2),
     paddingLeft: 15
+  },
+  options: {
+    padding: 5
   },
   separator: {
     borderColor: 'rgba(100, 100, 100, 0.3)',
