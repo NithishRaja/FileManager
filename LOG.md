@@ -205,3 +205,9 @@
 * finished code to display part of long names at 1150
 * added options icon to folders and files
 * **finished at 1204 on 19-02-2018**
+
+* **started at 1454 on 20-02-2018**
+* start writing component for options at 1509
+* bug found: when file name is long, options component gets pushed to the end
+* finished boilerplate for **Options** at 1520
+* 
