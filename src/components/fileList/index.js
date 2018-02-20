@@ -86,7 +86,7 @@ export default class FileList extends Component{
                 <Icons isFile={item.isFile} isDirectory={item.isDirectory} name={item.name} type={item.type} path={item.path} />
                 <Text style={styles.listItemText}>{item.name.length>30?`${item.name.split("").slice(0, 30).join("")}...`:item.name}</Text>
               </View>
-              <Options />
+              <Options buttons={[{title:"delete", onPress:() => console.log(item.name)}, {title:"copy", onPress:() => console.log(item.name)}, {title:"move", onPress:() => console.log(item.name)}]}/>
             </View>
           </TouchableNativeFeedback>
         );

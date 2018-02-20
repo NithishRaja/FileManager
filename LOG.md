@@ -210,4 +210,5 @@
 * start writing component for options at 1509
 * bug found: when file name is long, options component gets pushed to the end
 * finished boilerplate for **Options** at 1520
+* finished writing logic for **Options** at 1542
 * 
