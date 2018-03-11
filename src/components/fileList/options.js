@@ -63,7 +63,7 @@ export default class Options extends Component{
 
 const styles = {
   options: {
-    padding: 5
+    padding: 5,
   },
   modalContainer: {
     height: crossResponsiveHeight(100, 100, 100, 100),

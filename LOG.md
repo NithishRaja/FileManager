@@ -211,4 +211,9 @@
 * bug found: when file name is long, options component gets pushed to the end
 * finished boilerplate for **Options** at 1520
 * finished writing logic for **Options** at 1542
+* **ended at 1544 on 20-02-2018**
+
+* **started at 1110 on 11-03-2018**
+* start fixing `pushes options component to end when file name is too long` bug at 1110
+* fixed bug by reducing max no of characters of file name displayed at 1137
 * 
